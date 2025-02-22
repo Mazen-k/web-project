@@ -1,0 +1,231 @@
+
+*{
+    font-family: "IBM Plex Sans", serif;
+
+}
+body{
+    margin-bottom: 0px;
+    margin-right: 0px;
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #3776ab;
+    width: 100%;
+    height: 75px;
+    padding: 0 20px;
+    position: fixed;
+    margin-left:280px;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+}
+
+nav h1 {
+    position: sticky;
+    left: 50px;
+    color: white;
+    font-size: 24px;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 30px;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+    color: white;
+    padding: 10px;
+}
+nav ul li:hover{
+    cursor: default;
+    color: rgb(143, 143, 143);
+}
+
+.nav{
+    background-color: #3776AB;
+    position : fixed ;
+    Width : 240px;
+    height :100vh;
+    padding: 20px ;
+    font-size :24px;
+    left:0;
+    top:0 ;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.3);;
+}
+
+.nav ul{
+    list-style-type: none;
+    padding :0 ;
+    margin : 0 ;
+}
+
+.nav h1{
+    margin-bottom :25px ;
+    color : white ;
+    
+}
+.nav li {
+    display: block;
+    color:white ;
+    
+    
+    
+}
+
+.chapters li{
+    margin-bottom: none ;
+}
+.chapters li a{
+    color:white;
+    text-decoration: none;
+    transition : 0.6s ;
+    display : block ;
+    border-radius: 3px;
+    padding :20px;
+    padding-left: 5px;
+}
+.chapters li a:hover{
+    background: #FFD43B;
+    color : black ;
+}
+.section li a{
+    color: white ;
+    text-decoration: none;
+    font-size: 20px;
+    padding:10px;
+    padding-left: 10px;
+    display:block ;
+}
+.section{
+   display: none ;
+   color: #ddd;
+   padding-left: 10px;
+
+   
+}  
+main{
+    margin-left :305px;
+    padding-bottom: 0px;
+    flex-grow:1 ;
+    margin-bottom: 0px;
+
+}
+main h1 {
+    
+    color: #306998;
+    margin-bottom: 10px;
+}
+.compiler{
+    width : 10px;
+}
+main h3 {
+    
+    color: Black;
+    margin-top: 20px;
+}
+
+main p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+
+main ul {
+    padding-left: 20px;
+}
+
+.listing{
+    font-size: 18px;
+    color: #306998;
+}
+pre {
+    background-color: #2b2b2b;
+    color: #FFD43B;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 16px;
+}
+
+.code {
+    margin-top: 20px;
+    
+    padding: 12px;
+    border-radius: 12px;
+    width: 50%;
+    color: white;
+}
+
+.code textarea {
+    width: 100%;
+    resize:none;
+    background-color: rgb(151, 151, 174);
+    color: #FFD43B;
+    font-size: 16px;
+    width:600px;
+    height:100px;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 10px;
+}
+
+.code button {
+    color: #306998;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #FFD43B;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: none;
+}
+
+.code button:hover {
+    opacity:0.85;
+}
+
+#output {
+    background-color: black;
+    
+    padding: 10px;
+    color: #FFD43B;
+    border-radius: 5px;
+    min-height: 50px;
+}
+
+main h4{
+    color:#FFD43B;
+}
+.data-type{
+    color : rgb(184, 24, 184)
+}
+.data-types{
+    color :black ;
+}
+
+footer{
+    display: flex;
+    height: 40px;
+    width: calc(100vw - 275px);
+    bottom: 0px;
+    background: #306998;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 0px;
+    align-content: center;
+    justify-content: center;
+    margin-top: 45px;
+    justify-self: end;
+
+}
+footer p{
+    opacity: 0.5;
+
+}

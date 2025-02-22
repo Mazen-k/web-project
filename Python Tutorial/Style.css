@@ -266,7 +266,7 @@ main h4{
     color :black ;
 }
 
-footer{
+#course-foot{
     display: flex;
     height: 40px;
     width: calc(100vw - 275px);
@@ -289,3 +289,18 @@ footer p{
 .course-title:hover{
     cursor: pointer;
 }
+
+#home-foot{
+    position: absolute;
+    bottom: 0px;
+    background-color: #306998;
+    height: 40px;
+    width: 100vw;
+    left: 0px;
+    margin: 0;
+    display: flex;
+    align-content: baseline;
+    justify-content: center;
+
+}
+

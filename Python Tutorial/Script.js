@@ -18,22 +18,34 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
-function runPython() {
-    let code = document.getElementById("python-code").value;
-    let outputElement = document.getElementById("output");
+async function runPython(codeId, outputId) {
+    let code = document.getElementById(codeId).value;
+    let outputElement = document.getElementById(outputId);
 
     outputElement.textContent = "Running...\n";
 
-    fetch("https://pythoncompilerapi.com/run", {  // Replace with an actual Python execution API
+    fetch("https://emkc.org/api/v2/piston/execute", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ code: code })
+        body: JSON.stringify({
+            language: "python",
+            version: "3.10.0",
+            files: [{ content: code }]
+        })
     })
     .then(response => response.json())
     .then(data => {
-        outputElement.textContent = data.output;
+        if (data.run) {
+            outputElement.textContent = data.run.output || "No output received.";
+        } else {
+            outputElement.textContent = "Error: Invalid response.";
+        }
     })
     .catch(error => {
-        outputElement.textContent = "Error running code!";
+        outputElement.textContent = "Error: Failed to fetch response.";
+        console.error("Fetch error:", error);
     });
 }
+
+
+

@@ -138,12 +138,18 @@ background-color: #ecbe19;
     gap: 15px;
 } 
 .compiler{
+    position: fixed;
     justify-content: end;
     grid-column-start: 3;
-    right: 10px;
+    right: 0;
+    top: 0;
+    z-index: 0;
 }
 iframe{
     justify-self: end;
+    height: 100vh;
+    width: 400px;
+    z-index: 4;
 }
 
 .nav{
@@ -217,7 +223,7 @@ main{
     margin-left :15px;
     padding-bottom: 30px;
     flex-grow:1 ;
-    margin-bottom: 0px;
+    margin-bottom: 60px;
     z-index: 0;
 
 }
@@ -293,7 +299,7 @@ pre {
     color: white;
 }
 
-.code textarea {
+.code .small {
     width: 100%;
     resize:none;
     background-color: rgb(151, 151, 174);
@@ -305,6 +311,19 @@ pre {
     border: none;
     padding: 10px 10px;
 }
+.code .large {
+    width: 100%;
+    resize:none;
+    background-color: rgb(151, 151, 174);
+    color: #FFD43B;
+    font-size: 16px;
+    width:600px;
+    height:200px;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 10px;
+}
+
 
 .code button {
     color: #306998;
@@ -317,11 +336,11 @@ pre {
     border: none;
 }
 
-.code button:hover {
-    opacity:0.85;
+.code button:active {
+    background-color: #c59b02;
 }
 
-#output {
+.output {
     background-color: black;
 
     padding: 10px;
@@ -355,7 +374,7 @@ main h4{
     margin-bottom: 0px;
     align-content: center;
     justify-content: center;
-    margin-top: 45px;
+    margin-top: 15px;
     justify-self: end;
     z-index: 1;
 }
@@ -461,5 +480,8 @@ p{
     cursor: default;
 }
 
+code{
+    color: #000000;
+}
 
 

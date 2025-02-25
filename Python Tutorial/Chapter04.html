@@ -35,7 +35,6 @@
                         <li>
                             <a href = "Chapter0Quiz.html">Chapter Quiz</a> 
                         </li>
-
                     </ul>
                 </li>
                 <li>
@@ -57,7 +56,6 @@
                         <li>
                             <a href = "Chapter1Quiz.html">Chapter Quiz</a> 
                         </li>
-
                     </ul>
                 </li>
                 <li>
@@ -76,7 +74,6 @@
                         <li>
                             <a href = "Chapter2Quiz.html">Chapter Quiz</a> 
                         </li>
-
                     </ul>
                 </li>
                 <li>
@@ -92,46 +89,98 @@
                         <li>
                             <a href = "Chapter3Quiz.html">Chapter Quiz</a> 
                         </li>
-
                     </ul>
                 </li>
-                
             </ul>
-            
         </aside>
 
         <main>
-            <h1>Introduction To Python </h1>
-            <p>Python is a high-level, interpreted programming language known for its simplicity and readability.</p>
-            <h2>What is Python?</h2>
-            <p>Python is an open-source programming language created by Guido van Rossum and released in 1991. It is widely used in web development, data science, automation, and artificial intelligence.</p>
-
-            <h2>Why Learn Python?</h2>
-            <ul class = "listing">
-                <li>Easy to learn and use</li>
-                <li>Extensive libraries and frameworks</li>
-                <li>Strong community support</li>
-                <li>Great for beginners and professionals</li>
+            <h1>Selection in Python</h1>
+            <p>Selection statements allow a program to make decisions based on conditions. This enables control over the program's flow.</p>
+            
+            <h2>Types of Selection Statements</h2>
+            <p>Python provides multiple ways to implement decision-making logic.</p>
+            <ul>
+                <li><code>if</code> statement</li>
+                <li><code>if-else</code> statement</li>
+                <li><code>if-elif-else</code> statement</li>
+                <li>Nested selection statements</li>
             </ul>
-
-            <h2> Your First Python Program</h2>
-            <p>Try running this simple Python program:</p>
+            
+            <h2>The <code>if</code> Statement</h2>
+            <p>The <code>if</code> statement allows execution of a block of code only if a specified condition evaluates to <code>True</code>.</p>
+            <p>Example:</p>
             <div class="code">
-                
-                <textarea class="small" id="python-code" rows="10" cols="50">print("Hello, World!")</textarea>
+                <textarea class="small" id="python-code1" rows="5" cols="50">x = -10
+if x < 0:
+    x = -x
+print("Absolute value:", x)</textarea>
                 <br>
-                <button onclick="runPython('python-code','output-1')">Run</button>
+                <button onclick="runPython('python-code1', 'output1')">Run</button>
                 <h4>Output:</h4>
-                <pre class="output" id="output-1"></pre>
+                <pre class="output" id="output1"></pre>
             </div>
             
-
+            <h2>The <code>if-else</code> Statement</h2>
+            <p>If the condition in an <code>if</code> statement evaluates to <code>False</code>, the <code>else</code> block executes.</p>
+            <p>Example:</p>
+            <div class="code">
+                <textarea class="large" id="python-code2" rows="5" cols="50">x = 5
+if x % 2 == 0:
+    print("Even number")
+else:
+    print("Odd number")</textarea>
+                <br>
+                <button onclick="runPython('python-code2', 'output2')">Run</button>
+                <h4>Output:</h4>
+                <pre class="output" id="output2"></pre>
+            </div>
             
+            <h2>The <code>if-elif-else</code> Statement</h2>
+            <p>Used for multi-way branching, allowing several conditions to be checked in sequence.</p>
+            <p>Example:</p>
+            <div class="code">
+                <textarea class="large" id="python-code3" rows="5" cols="50">score = 85
+if score >= 90:
+    print("Grade: A")
+elif score >= 80:
+    print("Grade: B")
+elif score >= 70:
+    print("Grade: C")
+else:
+    print("Grade: F")</textarea>
+                <br>
+                <button onclick="runPython('python-code3', 'output3')">Run</button>
+                <h4>Output:</h4>
+                <pre class="output" id="output3"></pre>
+            </div>
+            
+            <h2>Nested Selection</h2>
+            <p>Selection statements can be nested inside one another to evaluate multiple conditions.</p>
+            <p>Example:</p>
+            <div class="code">
+                <textarea class="large" id="python-code4" rows="5" cols="50">x = 6
+y = 12
+if x % 2 == 0:
+    if y % 2 == 0:
+        print("Both x and y are even")
+    else:
+        print("x is even, y is odd")
+else:
+    print("x is odd")</textarea>
+                <br>
+                <button onclick="runPython('python-code4', 'output4')">Run</button>
+                <h4>Output:</h4>
+                <pre class="output" id="output4"></pre>
+            </div>
         </main>
+
+
         <div id="compiler" class="compiler">
-            <iframe src="https://trinket.io/embed/python/ce6e9eb687d0" class = "compiler1"></iframe>
-            </div>
-        <footer id="course-foot" >
+            <iframe src="https://trinket.io/embed/python3" class = "compiler1"></iframe>
+        </div>
+        
+        <footer id="course-foot">
             <p>&COPY;Learn.py 2025 | All Rights Reserved.</p> 
         </footer>
     </body>

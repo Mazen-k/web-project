@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="Style.css">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+        <script defer src="Script.js"></script>
+        <script src="//onlinegdb.com/embed/js/uEEjUd_tO_?theme=dark"></script>
+        <title>Learn.py</title>
+        
+    </head>
+
+    <body>
+        <aside class = "nav">
+            <h1 class="course-title" onclick="window.location.href='index.html'">Python Basics</h1>
+            <ul class = "chapters">
+                <li>
+                    <a href = "#" class = "chapter"> Chapter 0</a>
+                    
+                    <ul class = "section" >
+                        <li>
+                            <a href = "Chapter01.html">0.1 Language Intro</a> 
+                        </li>
+                        <li>
+                            <a href = "Chapter02.html">0.2 Objects & Data Types</a> 
+                        </li>
+                        <li>
+                            <a href = "Chapter03.html">0.3 Variables & Operators</a> 
+                        </li>
+                        <li>
+                            <a href = "Chapter04.html">0.4 Selection</a> 
+                        </li>
+                        <li>
+                            <a href = "Chapter05.html">0.5 Repetion</a> 
+                        </li>
+                        <li>
+                            <a href = "Chapter0Quiz.html">Chapter Quiz</a> 
+                        </li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href = "#" class = "chapter">Chapter 1</a>
+                    
+                    <ul class = "section" >
+                        <li>
+                            <a href = "Chapter11.html">1.1 Lists</a> 
+                        </li>
+                        <li>
+                            <a href = "Chapter12.html">1.2 Tuples</a> 
+                        </li>
+                        <li>
+                            <a href = "Chapter13.html">1.3 Strings</a> 
+                        </li>
+                        <li>
+                            <a href = "Chapter14.html">1.4 Functions</a> 
+                        </li>
+                        <li>
+                            <a href = "Chapter1Quiz.html">Chapter Quiz</a> 
+                        </li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href = "#" class = "chapter">Chapter 2</a>
+                    
+                    <ul class = "section">
+                        <li>
+                            <a href = "Chapter21.html">2.1 Dictionary</a> 
+                        </li>
+                        <li>
+                            <a href = "Chapter22.html">2.2 Sets</a> 
+                        </li>
+                        <li>
+                            <a href = "Chapter23.html">2.3 2D List</a> 
+                        </li>
+                        <li>
+                            <a href = "Chapter2Quiz.html">Chapter Quiz</a> 
+                        </li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href = "#" class = "chapter">Chapter 3</a>
+                    
+                    <ul class = "section" >
+                        <li>
+                            <a href = "Chapter31.html">3.1 Searching</a> 
+                        </li>
+                        <li>
+                            <a href = "Chapter32.html">3.2 Sorting</a> 
+                        </li>
+                        <li>
+                            <a href = "Chapter3Quiz.html">Chapter Quiz</a> 
+                        </li>
+
+                    </ul>
+                </li>
+                
+            </ul>
+            
+        </aside>
+
+        <main>
+            <h1 class="page-title">Variables & Operators </h1>
+            
+            <h2>Arithmetic Operations</h2>
+            <p class="page-subtitle">operators used for <span class="data-type">int</span> and <span class="data-type">float</span>:</p>
+
+            
+            <ul >
+                <li><Strong>Addition(<span class = "operator">+</span></Strong>): x + y</li>
+                <li><Strong>Subtraction(<span class = "operator">-</span></Strong>): x - y</li>
+                <li><Strong>Multiplication(<span class = "operator">*</span></Strong>): x * y</li>
+                <li><Strong>Division(<span class = "operator">/</span></Strong>): x / y</li>
+                <li><Strong>Power(<span class = "operator">**</span></Strong>): x ** y</li>
+            </ul>
+            <image src = "/PythonTutorial 2\assets\operators1.png"></image>
+            <image src = "/PythonTutorial 2\assets\operators2.png"></image>
+            <Br>
+            <p>operators specific for <span class="data-type">int</span> :</p>
+            <ul >
+                <li><Strong>Integer Divison(<span class = "operator">//</span></Strong>): x // y is the quotient of x / y</li>
+                <li><Strong>Modulo(<span class = "operator">%</span></Strong>): x % y is the remainder of x / y</li>
+                
+            </ul>
+            <image src = "/PythonTutorial 2\assets\operators3.png"></image>
+            <br><br>
+
+            <h2>Relational Operations</h2>
+            <p>operations used to compare two values and return a <span class = "data-type">bool</span></p>
+            <ul>
+                <li><Strong>Equal(<span class = "operator">==</span></Strong>): x == y</li>
+                <li><Strong>Not equal</Strong>(<span class = "operator">!=</span></Strong>): x != y</li>
+                <li><Strong>Less than(<span class = "operator"><</span></Strong>): x < y</li>
+                <li><Strong>Greater than(<span class = "operator">></span></Strong>): x > y</li>
+                <li><Strong>Less than or equal(<span class = "operator"><=</span></Strong>): x <= y</li>
+                <li><Strong>Greater than or equal(<span class = "operator">>=</span></Strong>): x >= y</li>
+            </ul>
+
+            <image src = "/PythonTutorial 2\assets\operators4.png"></image>
+            <image src = "/PythonTutorial 2\assets\operators5.png"></image>
+
+            <h2>Logical Operation</h2>
+            <p>operations that use boolean logic</p>
+            <ul>
+                <li><Strong>AND(<span class = "operator">and</span></Strong>): x and y</li>
+                <li><Strong>OR</Strong>(<span class = "operator">or</span></Strong>): x or y</li>
+                <li><Strong>NOT(<span class = "operator">not</span></Strong>): not x</li>
+                
+            </ul>
+            <image src = "/PythonTutorial 2\assets\operators6.png"></image>
+            <image src = "/PythonTutorial 2\assets\operators7.png"></image>
+            <Br>
+            <p>Truth tables:</p>
+            <table border = "1" class = "truth-table">
+                <thead>
+                    <tr>
+                        <th>x</th>
+                        <th>y</th>
+                        <th>x <span class = "operator">and</span> y</th>
+                        <th>x <span class = "operator">or</span> y</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>False</td>
+                        <td>False</td>
+                        <td>False</td>
+                        <td>False</td>
+                    </tr>
+                    <tr>
+                        <td>False</td>
+                        <td>True</td>
+                        <td>False</td>
+                        <td>True</td>
+                    </tr>
+                    <tr>
+                        <td>True</td>
+                        <td>False</td>
+                        <td>False</td>
+                        <td>True</td>
+                    </tr>
+                    <tr>
+                        <td>True</td>
+                        <td>True</td>
+                        <td>True</td>
+                        <td>True</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>Expressions</h2>
+            <p>An expression is made up of operators, values and/or variables</p>
+            <p>Usally expressions are orderd with parenthesis</p>
+            <p>If we skip parenthsis order of precednece will be followed from low to high:</p>
+            <table border = "1" class = "order-of-precedance">
+                <tbody>
+                    <tr>
+                        <th>1</th>
+                        <td>Exponentiation(<span class = "operator">**</span>)</td>
+                        <th>5</th>
+                        <td>Relational operators</td>
+                    </tr>
+                    <tr>
+                        <th>2</th>
+                        <td>Unary operator minus(<span class = "operator">-</span>)</td>
+                        <th>6</th>
+                        <td><span class = "operator">not</span></td>
+                        
+                    </tr>
+                    <tr>
+                        <th>3</th>
+                        <td>Multiplication and division</td>
+                        <th>7</th>
+                        <td><span class = "operator">and</span></td>
+                        
+                    </tr>
+                    <tr>
+                        <th>4</th>
+                        <td>Addition and Subtraction</td>
+                        <th>8</th>
+                        <td><span class = "operator">or</span></td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+
+            <br>
+            <h2>Variables and Assignment operator</h2>
+            <p>In python, a vriable is just a name associated with an object</p>
+            <p>We use the <span class = "operator">=</span> operator to intialize a variable</p>
+            <image src = "/PythonTutorial 2\assets\operators8.png"></image>
+            <dl>
+                <dt>Important remark: the <span class = "operator">=</span> operator  is not an equation</dt>
+                <dd>ex: x = x + 1</dt>
+                <dt>Python has dynamic data-typing (not a strongly-typed language like C/C++ or Java)</dt>
+                <dd>Variables can change data-type </dd>
+                <dd>Operations are evaluated at run time for compatibility with objects</dd>
+                <dt>Python has rules for variable names</dt>
+                <dd>Cannot start with a digit</dd>
+                <dd>Cannot contain spaces or symbols</dd>
+                <dd>Cannot be a reserved word </dd>
+            </dl>
+            <p>List of reserved words:</p>
+            <table border = "1" class = "reserved-words">
+                <tr>
+                    <td>False</td>
+                    <td>class</td>
+                    <td>finally</td>
+                    <td>is</td>
+                    <td>return</td>
+                </tr>
+                <tr>
+                    <td>None</td>
+                    <td>continue</td>
+                    <td>for</td>
+                    <td>lambda</td>
+                    <td>try</td>
+
+                </tr>
+                <tr>
+                    <td>True</td>
+                    <td>def</td>
+                    <td>from</td>
+
+                    <td>nonlocal</td>
+                    <td>while</td>
+                    
+
+                </tr>
+                <tr>
+                    <td>and</td>
+                    <td>del</td>
+                    <td>global</td>
+                    <td>not</td>
+                    <td>with</td>
+                    
+                
+                </tr>
+                <tr>
+                    <td>as</td>
+                    <td>elif</td>
+                    <td>if</td>
+                    <td>or</td>
+                    <td>yield</td>
+                </tr>
+                <tr>
+                    <td>assert</td>
+                    <td>else</td>
+                    <td>import</td>
+                    <td>pass</td>
+                </tr>
+                <tr>
+                    <td>break</td>
+                    <td>except</td>
+                    <td>in</td>
+                    <td>raise</td>
+                </tr>
+
+            
+            </table>
+
+            
+            <br><br><br><br><br><br><br>
+
+            
+        </main>
+        <div id="compiler" class="compiler">
+            <iframe src="https://trinket.io/embed/python/ce6e9eb687d0" class = "compiler1"></iframe>
+            </div>
+        <footer id="course-foot" >
+            <p>&COPY;Learn.py 2025 | All Rights Reserved.</p> 
+        </footer>
+    </body>
+</html>

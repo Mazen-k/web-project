@@ -4,6 +4,17 @@
 
 }
 /* styling for home page begins here */
+#home-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:0%;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+
+}
 .course-card {
     border-left: 5px solid #ffc107;
     transition: transform 0.3s ease-in-out;
@@ -112,17 +123,27 @@ background-color: #ecbe19;
     justify-content: center;
 
 }
+#home-foot p{
+    padding-top: 15px;
+    opacity: 0.8;
+}
+
 /* styling for home page ends here */
 
-body{
+ body{
     display: grid;
     grid-template-columns: 300px 800px 300px;
     margin-bottom: 0px;
     margin-right: 0px;
-}
+    gap: 15px;
+} 
 .compiler{
+    justify-content: end;
     grid-column-start: 3;
-    right: 30px;
+    right: 10px;
+}
+iframe{
+    justify-self: end;
 }
 
 .nav{
@@ -205,9 +226,7 @@ main h1 {
     color: #306998;
     margin-bottom: 10px;
 }
-.compiler{
-    width : 10px;
-}
+
 main h3 {
 
     color: Black;
@@ -312,7 +331,7 @@ main h4{
     justify-self: end;
     z-index: 1;
 }
-footer p{
+#course-foot p{
     opacity: 0.8;
 
 }

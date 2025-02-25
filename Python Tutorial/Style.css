@@ -98,14 +98,37 @@ font-weight: 475;
 #login:active{
 background-color: #ecbe19;
 }
+
+#home-foot{
+    position: fixed;
+    bottom: 0px;
+    background-color: #306998;
+    height: 40px;
+    width: 100vw;
+    left: 0px;
+    margin: 0;
+    display: flex;
+    align-content: baseline;
+    justify-content: center;
+
+}
 /* styling for home page ends here */
+
 body{
+    display: grid;
+    grid-template-columns: 300px 800px 300px;
     margin-bottom: 0px;
     margin-right: 0px;
 }
-
+.compiler{
+    grid-column-start: 3;
+    right: 30px;
+}
 
 .nav{
+    z-index: 2;
+    grid-column-start: 1;
+    grid-column-end:2 ;
     background-color: #3776AB;
     position : fixed ;
     Width : 240px;
@@ -168,10 +191,13 @@ body{
 
 }
 main{
-    margin-left :305px;
-    padding-bottom: 0px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin-left :15px;
+    padding-bottom: 30px;
     flex-grow:1 ;
     margin-bottom: 0px;
+    z-index: 0;
 
 }
 main h1 {
@@ -269,9 +295,12 @@ main h4{
 
 #course-foot{
     display: flex;
+    position: sticky;
     height: 40px;
-    width: calc(100vw - 275px);
+    width: 100vw;
     bottom: 0px;
+    top: 100vh;
+    left: 0;
     background: #306998;
     color: rgb(0, 0, 0);
     text-align: center;
@@ -281,7 +310,7 @@ main h4{
     justify-content: center;
     margin-top: 45px;
     justify-self: end;
-
+    z-index: 1;
 }
 footer p{
     opacity: 0.8;
@@ -291,19 +320,8 @@ footer p{
     cursor: pointer;
 }
 
-#home-foot{
-    position: absolute;
-    bottom: 0px;
-    background-color: #306998;
-    height: 40px;
-    width: 100vw;
-    left: 0px;
-    margin: 0;
-    display: flex;
-    align-content: baseline;
-    justify-content: center;
 
-}
+
 
 /* styling for signup and login begins here */
 

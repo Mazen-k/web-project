@@ -34,8 +34,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
+    background: #000000b3;
+    color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,13 +66,13 @@ position: fixed;
 left: 0;
 top: 0;
 z-index: 1000;
-box-shadow: 0px 0px 7px rgb(93, 93, 93);
+box-shadow: 0px 0px 7px #5d5d5d;
 }
 
 nav h1 {
 position: sticky;
 left: 50px;
-color: white;
+color: #ffffff;
 font-size: 24px;
 }
 
@@ -86,12 +86,12 @@ padding: 0;
 
 nav ul li {
 margin: 0 15px;
-color: white;
+color: #ffffff;
 padding: 10px;
 }
 nav ul li:hover{
 cursor: default;
-color: rgb(143, 143, 143);
+color: #8f8f8f;
 }
 #login{
 background-color: #FFD43B;
@@ -164,7 +164,7 @@ background-color: #ecbe19;
     font-size :24px;
     left:0;
     top:0 ;
-    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.3);;
+    box-shadow: 5px 0 10px #0000004d;;
 }
 
 .nav ul{
@@ -175,12 +175,12 @@ background-color: #ecbe19;
 
 .nav h1{
     margin-bottom :25px ;
-    color : white ;
+    color : #ffffff ;
 
 }
 .nav li {
     display: block;
-    color:white ;
+    color:#ffffff ;
 
 
 
@@ -190,7 +190,7 @@ background-color: #ecbe19;
     margin-bottom: none ;
 }
 .chapters li a{
-    color:white;
+    color:#ffffff;
     text-decoration: none;
     transition : 0.6s ;
     display : block ;
@@ -200,10 +200,10 @@ background-color: #ecbe19;
 }
 .chapters li a:hover{
     background: #FFD43B;
-    color : black ;
+    color : #000000 ;
 }
 .section li a{
-    color: white ;
+    color: #ffffff ;
     text-decoration: none;
     font-size: 20px;
     padding:10px;
@@ -235,7 +235,7 @@ main h1 {
 
 main h3 {
 
-    color: Black;
+    color: #000000;
     margin-top: 20px;
 }
 
@@ -254,31 +254,31 @@ main ul {
     color: #306998;
 }
 .operator{
-    color: rgb(57, 206, 206);
+    color: #39cece;
 }
 .truth-table{
     width :300px;
     content: center;
     text-align:center;
-    border:2px black;
+    border:2px #000000;
     border-collapse: collapse;
     
 }
 .truth-table td{
-    color:blue;
+    color:#0000ff;
 }
 .order-of-precedance{
     width :420px;
     content: center;
     text-align:center;
-    border:2px black;
+    border:2px #000000;
     border-collapse: collapse;
 }
 .reserved-words{
     width :420px;
     content: center;
     text-align:center;
-    border:2px black;
+    border:2px #000000;
     border-collapse: collapse;
 }
 pre {
@@ -296,13 +296,13 @@ pre {
     padding: 12px;
     border-radius: 12px;
     width: 50%;
-    color: white;
+    color: #ffffff;
 }
 
 .code .small {
     width: 100%;
     resize:none;
-    background-color: rgb(151, 151, 174);
+    background-color: #9797ae;
     color: #FFD43B;
     font-size: 16px;
     width:600px;
@@ -314,7 +314,7 @@ pre {
 .code .large {
     width: 100%;
     resize:none;
-    background-color: rgb(151, 151, 174);
+    background-color: #9797ae;
     color: #FFD43B;
     font-size: 16px;
     width:600px;
@@ -341,7 +341,7 @@ pre {
 }
 
 .output {
-    background-color: black;
+    background-color: #000000;
 
     padding: 10px;
     color: #FFD43B;
@@ -353,10 +353,10 @@ main h4{
     color:#FFD43B;
 }
 .data-type{
-    color : rgb(184, 24, 184)
+    color : #b818b8
 }
 .data-types{
-    color :black ;
+    color :#000000 ;
 }
 
 #course-foot{
@@ -368,7 +368,7 @@ main h4{
     top: 100vh;
     left: 0;
     background: #306998;
-    color: rgb(0, 0, 0);
+    color: #000000;
     text-align: center;
     padding: 15px;
     margin-bottom: 0px;
@@ -409,10 +409,10 @@ main h4{
     align-items: center;
     justify-content: center;
     border: 1px solid #ccc;
-    background-color: aliceblue;
+    background-color: #f0f8ff;
     padding: 30px;
     border-radius: 9px;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    box-shadow: 5px 5px 15px #0000004d;
 
 }
 
@@ -432,7 +432,7 @@ form{
 }
 input[type="submit"] {
     background-color:#FFD43B;
-    color: rgb(150, 150, 150);
+    color: #969696;
     cursor: pointer;
     border: none;
 }
@@ -440,7 +440,7 @@ input[type ="submit"]:hover{
     background-color: #FFE873;
 }
 #error-message{
-    color: red;
+    color: #ff0000;
     font-size: 14px;
     margin-top: 10px;
 
@@ -465,13 +465,13 @@ input[type ="submit"]:hover{
 }
 
 .link{
-    color: blue;
+    color: #0000ff;
     text-decoration: none;
 
 }
 
 .link:hover{
-    color: rgb(72, 72, 255);
+    color: #4848ff;
     cursor: pointer;
 
 }

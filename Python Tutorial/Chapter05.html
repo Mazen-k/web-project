@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="Style.css">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+        <script defer src="Script.js"></script>
+        
+        <title>Learn.py</title>
+        
+    </head>
+
+    <body>
+        <aside class = "nav">
+            <h1 onclick="window.location.href='index.html'">Learn.py</h1>
+            <h3 class="course-title" >Python Basics</h3>
+            <ul class = "chapters">
+                <li>
+                    <a href = "#" class = "chapter"> Chapter 0</a>
+                    
+                    <ul class = "section" >
+                        <li>
+                            <a href = "Chapter01.html">0.1 Language Intro</a> 
+                        </li>
+                        <li>
+                            <a href = "Chapter02.html">0.2 Objects and Data Types</a> 
+                        </li>
+                        <li>
+                            <a href = "Chapter03.html">0.3 Operators</a> 
+                        </li>
+                        <li>
+                            <a href = "Chapter04.html">0.4 Selection</a> 
+                        </li>
+                        <li>
+                            <a href = "Chapter05.html">0.5 Repetion</a> 
+                        </li>
+                        <li>
+                            <a href = "Chapter0Quiz.html">Chapter Quiz</a> 
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href = "#" class = "chapter">Chapter 1</a>
+                    
+                    <ul class = "section" >
+                        <li>
+                            <a href = "Chapter11.html">1.1 Lists</a> 
+                        </li>
+                        <li>
+                            <a href = "Chapter12.html">1.2 Tuples</a> 
+                        </li>
+                        <li>
+                            <a href = "Chapter13.html">1.3 Strings</a> 
+                        </li>
+                        <li>
+                            <a href = "Chapter14.html">1.4 Functions</a> 
+                        </li>
+                        <li>
+                            <a href = "Chapter1Quiz.html">Chapter Quiz</a> 
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href = "#" class = "chapter">Chapter 2</a>
+                    
+                    <ul class = "section">
+                        <li>
+                            <a href = "Chapter21.html">2.1 Dictionary</a> 
+                        </li>
+                        <li>
+                            <a href = "Chapter22.html">2.2 Sets</a> 
+                        </li>
+                        <li>
+                            <a href = "Chapter23.html">2.3 2D List</a> 
+                        </li>
+                        <li>
+                            <a href = "Chapter2Quiz.html">Chapter Quiz</a> 
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href = "#" class = "chapter">Chapter 3</a>
+                    
+                    <ul class = "section" >
+                        <li>
+                            <a href = "Chapter31.html">3.1 Searching</a> 
+                        </li>
+                        <li>
+                            <a href = "Chapter32.html">3.2 Sorting</a> 
+                        </li>
+                        <li>
+                            <a href = "Chapter3Quiz.html">Chapter Quiz</a> 
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+
+        <main>
+            <h1>Repetition in Python</h1>
+            <p>Repetition statements allow a program to execute a block of code multiple times based on a condition. This enables iteration and automates repetitive tasks.</p>
+        
+            <h2>Types of Repetition Statements</h2>
+            <p>Python provides multiple ways to implement loops for repetition.</p>
+            <ul>
+                <li><code>while</code> loop</li>
+                <li><code>for</code> loop</li>
+                <li>Nested loops</li>
+                <li>Using <code>break</code> and <code>continue</code> statements</li>
+            </ul>
+        
+            <h2>The <code>while</code> Loop</h2>
+            <p>The <code>while</code> loop executes a block of code as long as a specified condition evaluates to <code>True</code>.</p>
+            <p>Example:</p>
+            <div class="code">
+                <textarea class="small" id="python-code1" rows="5" cols="50" tabindex="-1" wrap="off">n = 5
+i = 1
+while i <= n:
+    print(i)
+    i += 1
+                </textarea>
+                <br>
+                <button onclick="runPython('python-code1', 'output1')">Run</button>
+                <h4>Output:</h4>
+                <pre class="output" id="output1"></pre>
+            </div>
+        
+            <h2>The <code>for</code> Loop</h2>
+            <p>The <code>for</code> loop is used to iterate over a sequence (such as a list, tuple, or range).</p>
+            <p>Example:</p>
+            <div class="code">
+                <textarea class="small" id="python-code2" rows="5" cols="50">n = 5
+for i in range(1, n+1):
+    print(i)</textarea>
+                <br>
+                <button onclick="runPython('python-code2', 'output2')">Run</button>
+                <h4>Output:</h4>
+                <pre class="output" id="output2"></pre>
+            </div>
+        
+            <h2>Nested Loops</h2>
+            <p>Loops can be nested inside one another to work with multi-dimensional data or complex patterns.</p>
+            <p>Example:</p>
+            <div class="code">
+                <textarea class="small" id="python-code3" rows="5" cols="50">n = 4
+for i in range(1, n+1):
+    for j in range(1, i+1):
+        print(j, end=" ")
+    print()</textarea>
+                <br>
+                <button onclick="runPython('python-code3', 'output3')">Run</button>
+                <h4>Output:</h4>
+                <pre class="output" id="output3"></pre>
+            </div>
+        
+            <h2>Using <code>break</code> and <code>continue</code></h2>
+            <p>The <code>break</code> statement exits the loop early, while <code>continue</code> skips the current iteration and moves to the next.</p>
+            <p>Example for break statement:</p>
+            <div class="code">
+                <textarea class="small" id="python-code4" rows="5" cols="50">for i in range(1, 10):
+    if i == 5:
+        break
+        print(i)
+    print("Loop stopped at:", i)</textarea>
+                <br>
+                <button onclick="runPython('python-code4', 'output4')">Run</button>
+                <h4>Output:</h4>
+                <pre class="output" id="output4"></pre>
+            </div>
+            <p>Example for continue statement:</p>
+            <div class="code">
+                <textarea class="small" id="python-code5" rows="5" cols="50">for i in range(1, 10):
+                if i == 5:
+                    continue
+                print(i)</textarea>
+                <br>
+                <button onclick="runPython('python-code5', 'output5')">Run</button>
+                <h4>Output:</h4>
+                <pre class="output" id="output5"></pre>
+            </div>
+
+        </main>
+        
+        
+
+        <div id="compiler" class="compiler">
+            <iframe class="iframe" src="https://trinket.io/embed/python3" class = "compiler1"></iframe>
+        </div>
+        
+        <footer id="course-foot">
+            <p>&COPY;Learn.py 2025 | All Rights Reserved.</p> 
+        </footer>
+    </body>
+</html>

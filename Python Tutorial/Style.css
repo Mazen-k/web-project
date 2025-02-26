@@ -527,3 +527,17 @@ code{
     margin: 0;
     padding: 0;
 }
+/* styling for info page starts here */
+#info-div{
+    display: flex;
+    padding: 10px 10px 20px;
+    margin-top: 75px; 
+}
+.sub-div{
+    display: flex;
+
+}
+.small-div{
+    display: flex;
+
+}

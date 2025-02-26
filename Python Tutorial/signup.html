@@ -14,7 +14,7 @@
             <li onclick="window.location.href='index.html'">Home</li>
             <li>Info</li>
             <li>Compiler</li>
-            <li><button id="login"><a href="">login</a></button></li>
+            <li><button id="login"><a href="login.html">login</a></button></li>
         </ul>
         </nav>
     <div id ="big-div">
@@ -33,18 +33,21 @@
             </div>
             <input type="text" id="emls"
             placeholder="Email" class="texts" required>
-            <input type="text" id="username"
-            placeholder="Username" class="texts" required>
+            
             <input type="text" id = "password"
             placeholder="Password" class="texts" required>
             <input type = "text" id = "Verify Password"
             placeholder="Confirm Password" class="texts" required>
             <div id="checkbox-container">
-                <input type="checkbox" id="terms"> 
-                <label for="terms">Agree to terms and conditions</label>
+                <input type="checkbox" id="terms" required> 
+                <label for="terms">Agree to <a href="" class="link">terms and conditions</a></label>
             </div>
-            <input type="submit" class="texts" value = Register>
+            <input type="submit" class="texts" value = Register><p>
+        
+                already have an account? <a onclick="window.location.href='login.html'" class="link">login</a>
+               </p>
             <p id="error-message"></p>
+             
 
             
     </div>

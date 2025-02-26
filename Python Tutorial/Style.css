@@ -130,7 +130,7 @@ background-color: #ecbe19;
 
 /* styling for home page ends here */
 
- body{
+.body{
     display: grid;
     grid-template-columns: 300px 800px 300px;
     margin-bottom: 0px;

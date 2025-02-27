@@ -1,9 +1,73 @@
-
+/* general styling for all pages */
 *{
     font-family: "IBM Plex Sans", serif;
 
 }
+
+p{
+    cursor: default;
+}
+
+
 /* styling for home page begins here */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #3776ab;
+    width: 100%;
+    height: 75px;
+    padding: 0 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 0px 7px #5d5d5d;
+}
+
+nav h1 {
+    position: sticky;
+    left: 50px;
+    color: #ffffff;
+    font-size: 24px;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 30px;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+    color: #ffffff;
+    padding: 10px;
+}
+
+nav ul li:hover{
+    cursor: default;
+    color: #8f8f8f;
+}
+
+#login{
+    background-color: #FFD43B;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+#login a{
+    text-decoration: none;
+    color: #000000;
+    font-weight: 475;
+}
+
+#login:active{
+    background-color: #ecbe19;
+}
+
 #home-body{
     display: flex;
     justify-content: center;
@@ -51,64 +115,10 @@
 
 
 #courses {
-    max-height: 500px; 
+    max-height: 500px;
     padding: 20px;
 }
-nav {
-display: flex;
-align-items: center;
-justify-content: space-between;
-background-color: #3776ab;
-width: 100%;
-height: 75px;
-padding: 0 20px;
-position: fixed;
-left: 0;
-top: 0;
-z-index: 1000;
-box-shadow: 0px 0px 7px #5d5d5d;
-}
 
-nav h1 {
-position: sticky;
-left: 50px;
-color: #ffffff;
-font-size: 24px;
-}
-
-nav ul {
-display: flex;
-align-items: center;
-list-style: none;
-margin: 30px;
-padding: 0;
-}
-
-nav ul li {
-margin: 0 15px;
-color: #ffffff;
-padding: 10px;
-}
-nav ul li:hover{
-cursor: default;
-color: #8f8f8f;
-}
-#login{
-background-color: #FFD43B;
-border: none;
-padding: 4px 10px;
-border-radius: 4px;
-
-}
-#login a{
-text-decoration: none;
-color: #000000;
-font-weight: 475;
-}
-
-#login:active{
-background-color: #ecbe19;
-}
 
 #home-foot{
     position: fixed;
@@ -123,6 +133,7 @@ background-color: #ecbe19;
     justify-content: center;
 
 }
+
 #home-foot p{
     padding-top: 0px;
     opacity: 0.8;
@@ -130,27 +141,16 @@ background-color: #ecbe19;
 
 /* styling for home page ends here */
 
+/* styling for course pages starts here */
+
 .body{
     display: grid;
     grid-template-columns: 300px 800px 300px;
     margin-bottom: 0px;
     margin-right: 0px;
     gap: 15px;
-} 
-.compiler{
-    position: fixed;
-    justify-content: end;
-    grid-column-start: 3;
-    right: 0;
-    top: 0;
-    z-index: 0;
 }
-.iframe{
-    justify-self: end;
-    height: 100vh;
-    width: 400px;
-    z-index: 4;
-}
+
 
 .nav{
     z-index: 2;
@@ -164,8 +164,10 @@ background-color: #ecbe19;
     font-size :24px;
     left:0;
     top:0 ;
-    box-shadow: 5px 0 10px #0000004d;;
+    box-shadow: 5px 0 10px #0000004d;
 }
+
+/* this is our edit of the default h1 properties extracted from google's devtools inspect tool. */
 :-webkit-any(article, aside, nav, section) h1 {
     font-size: 1.5em;
     margin-block-start: 0px;
@@ -185,29 +187,26 @@ background-color: #ecbe19;
     top: 15px;
     margin-bottom :25px ;
     color : #ffffff ;
-    
 }
+
 h1:hover{
     cursor: pointer;
-    
 }
 
 .nav .course-title{
     margin-bottom :25px ;
     color : #ffffff ;
-
 }
+
 .nav li {
     display: block;
     color:#ffffff ;
-
-
-
 }
 
 .chapters li{
     margin-bottom: none ;
 }
+
 .chapters li a{
     color:#ffffff;
     text-decoration: none;
@@ -217,10 +216,12 @@ h1:hover{
     padding :20px;
     padding-left: 5px;
 }
+
 .chapters li a:hover{
     background: #FFD43B;
     color : #000000 ;
 }
+
 .section li a{
     color: #ffffff ;
     text-decoration: none;
@@ -229,13 +230,13 @@ h1:hover{
     padding-left: 10px;
     display:block ;
 }
+
 .section{
    display: none ;
    color: #ddd;
    padding-left: 10px;
-
-
 }
+
 main{
     grid-column-start: 2;
     grid-column-end: 3;
@@ -247,13 +248,11 @@ main{
 
 }
 main h1 {
-
     color: #306998;
     margin-bottom: 10px;
 }
 
 main h3 {
-
     color: #000000;
     margin-top: 20px;
 }
@@ -272,20 +271,23 @@ main ul {
     font-size: 18px;
     color: #306998;
 }
+
 .operator{
     color: #39cece;
 }
+
 .truth-table{
     width :300px;
     content: center;
     text-align:center;
     border:2px #000000;
     border-collapse: collapse;
-    
 }
+
 .truth-table td{
     color:#0000ff;
 }
+
 .order-of-precedance{
     width :420px;
     content: center;
@@ -293,6 +295,7 @@ main ul {
     border:2px #000000;
     border-collapse: collapse;
 }
+
 .reserved-words{
     width :420px;
     content: center;
@@ -300,6 +303,7 @@ main ul {
     border:2px #000000;
     border-collapse: collapse;
 }
+
 pre {
     background-color: #2b2b2b;
     color: #FFD43B;
@@ -311,7 +315,6 @@ pre {
 
 .code {
     margin-top: 20px;
-
     padding: 12px;
     border-radius: 12px;
     width: 50%;
@@ -343,7 +346,6 @@ pre {
     padding: 10px 10px;
 }
 
-
 .code button {
     color: #306998;
     padding: 10px 15px;
@@ -361,7 +363,6 @@ pre {
 
 .output {
     background-color: #000000;
-
     padding: 10px;
     color: #FFD43B;
     border-radius: 5px;
@@ -371,12 +372,15 @@ pre {
 main h4{
     color:#FFD43B;
 }
+
 .data-type{
     color : #b818b8
 }
+
 .data-types{
     color :#000000 ;
 }
+
 
 #course-foot{
     display: flex;
@@ -397,14 +401,53 @@ main h4{
     justify-self: end;
     z-index: 1;
 }
+
 #course-foot p{
     opacity: 0.8;
-
 }
+
 .course-title:hover{
     cursor: pointer;
 }
 
+code{
+    color: #000000;
+}
+
+.compiler{
+    position: fixed;
+    justify-content: end;
+    grid-column-start: 3;
+    right: 0;
+    top: 0;
+    z-index: 0;
+    border-left: 5px solid black;
+}
+
+.iframe{
+    justify-self: end;
+    height: 100vh;
+    width: 400px;
+    z-index: 4;
+}
+/* styling for course pages ends here */
+
+
+
+/* styling for compiler page starts here */
+
+#compiler-body{
+    margin: 0;
+    padding: 0;
+}
+
+.compile{
+    height: calc(100vh - 79px);
+    width: calc(100vw - 8px);
+    position: fixed;
+    bottom: 0;
+}
+/* styling for compiler page ends here */
 
 
 
@@ -419,8 +462,8 @@ main h4{
     height: 100vh;
     margin: 0;
     background-color: #f4f4f4;
-
 }
+
 #big-div{
     position: relative;
     display: flex;
@@ -432,7 +475,6 @@ main h4{
     padding: 30px;
     border-radius: 9px;
     box-shadow: 5px 5px 15px #0000004d;
-
 }
 
 form{
@@ -452,22 +494,24 @@ form{
     border-right: 1px solid #ccc;
     border-radius: 5px;
 }
+
 input[type="submit"] {
     background-color:#FFD43B;
     color: #545454;
     cursor: pointer;
     border: none;
 }
+
 input[type ="submit"]:active{
     background-color: #d4b100;
 }
+
 #error-message{
     color: #ff0000;
     font-size: 14px;
     margin-top: 10px;
-
-
 }
+
 #checkbox-container {
     margin: 8px 0px 12px;
     display: flex;
@@ -476,6 +520,7 @@ input[type ="submit"]:active{
     flex-direction: row;
     border-radius: 0;
 }
+
 .names{
     padding: 5px;
     border-radius: 5px;
@@ -487,8 +532,8 @@ input[type ="submit"]:active{
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     border-right: 1px solid #ccc;
-
 }
+
 #creds{
     align-self: self-start;
     display: flex;
@@ -498,35 +543,16 @@ input[type ="submit"]:active{
 .link{
     color: #0000ff;
     text-decoration: none;
-
 }
 
 .link:hover{
     color: #4848ff;
     cursor: pointer;
-
 }
+
 /* styling for login and sign up ends here */
-p{
-    cursor: default;
-}
-
-code{
-    color: #000000;
-}
 
 
-.compile{
-    height: calc(100vh - 79px);
-    width: calc(100vw - 8px);
-    position: fixed;
-    bottom: 0;
-}
-
-#compiler-body{
-    margin: 0;
-    padding: 0;
-}
 /* styling for info page starts here */
 #info-div{
     display: flex;
@@ -536,8 +562,8 @@ code{
     align-content: center;
     justify-content: center;
     align-items: center;
-
 }
+
 .sub-div {
     display: flex;
     flex-direction: row;
@@ -545,34 +571,38 @@ code{
     justify-content: center;
     align-items: center;
     margin: 30px 30px;
+    align-content: space-between;
 }
+
 .small-div {
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
     align-items: center;
-    margin: 10px 7px 15px 7px;
+    margin: 10px 15px 15px 7px;
     padding: 10px;
-    width: 30vw;
+    width: 25vw;
     border-top: 1px solid #cbcbcb;;
-    border-left: 3px solid #ecbe19;
+    border-left: 4px solid #ecbe19;
     border-right: 1px solid #cbcbcb;;
     border-bottom: 1px solid #cbcbcb;
     border-radius: 7px;
     box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
     transition: transform 0.3s ease-in-out;
-    
 }
+
 .small-div:hover{
-    transform: scale(1.05);
+    transform: scale(1.0375);
 }
 
 #naming{
     text-decoration: none;
     color:#306998;
-    
 }
+
 #naming:hover{
     color: #6498c3;
 }
+
+/* styling for info page ends here */

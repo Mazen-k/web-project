@@ -664,6 +664,9 @@ input[type ="submit"]:active{
     align-content: space-between;
 }
 
+#intro{
+    max-width: 65vw;
+}
 .small-div {
     display: flex;
     flex-direction: column;

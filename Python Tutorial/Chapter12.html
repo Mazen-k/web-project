@@ -118,20 +118,22 @@
             </ul>
         
             <div class="code">
-                <textarea class="small" id="python-code9" rows="5" cols="50">x = -10
+                <textarea class="large" id="python-code9" rows="5" cols="50">x = -10
 location = (12.45534, 13.63850)
 
-print("location = "+ location)
-print("location[0] = "+ location[0])
-print("location[1] = "+ location[1])
-
+print("location=", location)
+print("location[0] = ", location[0])
+print("location[1] = ", location[1])
 
 (latitude, longitude) = location
-print("latitude = "+ latitude)
-print("longitude = "+longitude)
-
-
+print("latitude = ", latitude)
+print("longitude = ",longitude)
                 </textarea>
+                <br>
+                <button onclick="runPython('python-code9','output-1')">Run</button>
+                <h4>Output:</h4>
+                <pre class="output" id="output-1"></pre>
+
                 
         </main>
         

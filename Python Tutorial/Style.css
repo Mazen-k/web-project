@@ -269,11 +269,17 @@ main ul {
 
 .listing{
     font-size: 18px;
-    color: #306998;
+    
+}
+.listing li::marker{
+    color:#306998 ;
 }
 
 .operator{
     color: #39cece;
+}
+.boolean{
+    color: blue;
 }
 
 .truth-table{

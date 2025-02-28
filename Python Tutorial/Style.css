@@ -550,6 +550,90 @@ input[type ="submit"]:active{
     cursor: pointer;
 }
 
+#popup{
+    display: none;
+    position: fixed;
+    top: 50%;
+    height: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    z-index: 0;
+    overflow: auto;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(220, 219, 219);
+    z-index: -1;
+}
+
+.close-btn {
+    background: white;
+    color: black;
+    font-size:large;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    float: right;
+    border-radius: 5px;
+}
+
+.close-btn:hover {
+    background: darkred;
+}
+
+#popup{
+    display: none;
+    position: fixed;
+    top: 50%;
+    height: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    z-index: 0;
+    overflow: auto;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(220, 219, 219);
+    z-index: -1;
+}
+
+.close-btn {
+    background: white;
+    color: black;
+    font-size:large;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    float: right;
+    border-radius: 5px;
+}
+
+.close-btn:hover {
+    background: darkred;
+}
+
 /* styling for login and sign up ends here */
 
 
@@ -604,91 +688,10 @@ input[type ="submit"]:active{
 #naming:hover{
     color: #6498c3;
 }
-<<<<<<< Updated upstream
+
 
 /* styling for info page ends here */
 
 
 
 
-
-=======
->>>>>>> Stashed changes
-#popup{
-    display: none;
-    position: fixed;
-    top: 50%;
-    height: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 30%;
-    background: white;
-    padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    z-index: 0;
-    overflow: auto;
-}
-#overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgb(220, 219, 219);
-    z-index: -1;
-}
-.close-btn {
-    background: white;
-    color: black;
-    font-size:large;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    float: right;
-    border-radius: 5px;
-}
-
-.close-btn:hover {
-    background: darkred;
-}
-#popup{
-    display: none;
-    position: fixed;
-    top: 50%;
-    height: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 30%;
-    background: white;
-    padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    z-index: 0;
-    overflow: auto;
-}
-#overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgb(220, 219, 219);
-    z-index: -1;
-}
-.close-btn {
-    background: white;
-    color: black;
-    font-size:large;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    float: right;
-    border-radius: 5px;
-}
-
-.close-btn:hover {
-    background: darkred;
-}

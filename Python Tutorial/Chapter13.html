@@ -74,40 +74,55 @@
                 
             </ul>
         </aside>
+        
+
 
         <main>
-            <h1>Introduction To Python </h1>
-            <p>Python is a high-level, interpreted programming language known for its simplicity and readability.</p>
-            <h2>What is Python?</h2>
-            <p>Python is an open-source programming language created by Guido van Rossum and released in 1991. It is widely used in web development, data science, automation, and artificial intelligence.</p>
-
-            <h2>Why Learn Python?</h2>
+            <h1 class = "page-title">Tuples</h1>
+            <h2><span class = "data-type">tuple </span>data type</h2>
             <ul class = "listing">
-                <li>Easy to learn and use</li>
-                <li>Extensive libraries and frameworks</li>
-                <li>Strong community support</li>
-                <li>Great for beginners and professionals</li>
-            </ul>
-
-            <h2> Your First Python Program</h2>
-            <p>Try running this simple Python program:</p>
-            <div class="code">
+                <li>Use parentheses() to initalize a <span class = "data-type">tuple</span> in Python </li>
+                <li>Elements are seperated by commas</li>
+                <ul>
+                    <li>T1 = (1, 2, 3, 4, 5, 6)</li>
+                    <li>T2 = ("Hello World!", 12, 3.14, <span class = "boolean">False</span>)</li>
+                </ul>
                 
-                <textarea class="small" id="python-code" rows="10" cols="50">print("Hello, World!")</textarea>
+                <li><span class = "data-type">tuple </span> is either</li>
+                <ul>
+                    <li>Homogenous:same data-type (like T1)</li>
+                    <li>Heterogenous:mixed data-type (like T2)</li>
+                </ul>
+                <li>The built-in <span class = "data-type">len()</span> gives the length of the <span class = "data-type">tuple </span></li>
+                <li>Tuples are <strong>immutable</strong> meaning that once intialized cannot be changed, i.e., <strong>read-only</strong></li>
+            </ul>
+        
+            <div class="code">
+                <textarea class="large" id="python-code9" rows="5" cols="50">x = -10
+location = (12.45534, 13.63850)
+
+print("location=", location)
+print("location[0] = ", location[0])
+print("location[1] = ", location[1])
+
+(latitude, longitude) = location
+print("latitude = ", latitude)
+print("longitude = ",longitude)
+                </textarea>
                 <br>
-                <button onclick="runPython('python-code','output-1')">Run</button>
+                <button onclick="runPython('python-code9','output-1')">Run</button>
                 <h4>Output:</h4>
                 <pre class="output" id="output-1"></pre>
-            </div>
-            
-
-            
+        
+                
         </main>
-        <div id="compiler" class="compiler">
-            <iframe class="iframe" src="https://trinket.io/embed/python3" class = "compiler1"></iframe>
-            </div>
-        <footer id="course-foot" >
-            <p>&COPY;Learn.py 2025 | All Rights Reserved.</p> 
-        </footer>
+        
+                <div id="compiler" class="compiler">
+                    <iframe class="iframe" src="https://trinket.io/embed/python3" class = "compiler1"></iframe>
+                    </div>
+       
+     <footer id="course-foot" >
+          <p>&COPY;Learn.py 2025 | All Rights Reserved.</p> 
+     </footer>
     </body>
 </html>

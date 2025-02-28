@@ -604,6 +604,7 @@ input[type ="submit"]:active{
 #naming:hover{
     color: #6498c3;
 }
+<<<<<<< Updated upstream
 
 /* styling for info page ends here */
 
@@ -611,6 +612,8 @@ input[type ="submit"]:active{
 
 
 
+=======
+>>>>>>> Stashed changes
 #popup{
     display: none;
     position: fixed;

@@ -81,50 +81,244 @@
             </ul>
         </aside>
         <main>
+            <h1 class="page-title">Sets</h1>
+            
+            <h2>Python<span class = "data-type"> set </span></h2>
+            
+            
+               
+            <li>A Python <span class = "data-type">set </span> is an object that stores a collection of data in the 
+                same way as a mathematical set</li>
+            <ul class = "listing">
+                <li>All items must be unique(no duplicates) </li>
+                <li> Set is unordered (insertion order not maintained)</li>
+                <li> Elements in a set can be of different data types</li>
+                <li>A set can be modified, but the elements of a set are 
+                    immutable (since there is no indexing in <span class = "data-type">set</span>)
+                    </li>
+            </ul>
 
-            <h1 class="page-title">Objects and Data Types </h1>
-            <p class="text-element">
-                Elements in a python program are called Objects<BR>Objects have specific data types
-            </p>
-            <img src="./assets/data-stypes shell1.png">
-            <img src="./assets/data types shell2.png">
+            <h2>Creating a <span class = "data-type">set </span> </h2>
             
-            
-            <h2 class="page-subtitle">Data types</h2>
-            <h3><span class= "data-type">int</span> type:</h3>
-            <ul>
-                <li>Used to represent integers</li>
+            <ul class = "listing">
+                <li> <u>Method 2:</u> a <span class = "data-type">set </span> can be defined with curly braces({}): <li>
+                <ul>
+                    <li>For example, x = {'x',q','u'}</li>
+                    <li>if we call <span class = "data-type">print</span> x, we get:{'x,'q','u'}(notice how duplicates are removed)</li>
+                    <li>However, x ={} creates an empty dictionary. Hence the only way to create an empty set is to call <span class = "data-type">set </span>()</li>
+                </ul>
                 
-                <li>e.g 12,-12,143</li>
+            </ul>
+            <h2>Elements in a set</h2>
+            <ul class = "listing">
+                <li><span class = "data-type">len</span>(set) function: returns the number of elements in the set</li>
+                <li> <span class = "data-type">add</span>(element) method: adds an element (of any type) to a set</li>
+                <li><span class = "data-type">update</span>(argument) method: adds a group of elements to a set</li>
+                <ul><li> <i>argument</i> must be a sequence containing  iterable elements, 
+                    and each of the elements is added to the set
+                    </li></ul>
+                <li><span class = "data-type">pop</span>() method: removes and returns an arbitrary (random) set 
+                    element.</li>
+                <li><span class = "data-type">clear</span>() method: clears all the elements of the set</li>
+                <li><span class = "data-type">remove</span>(element) and discard(element) methods are used to remove 
+                    the specified element from the set</li>
+                    <ul>
+                        <li> The item that should be removed is passed as an argument</li>
+                        <li>Behave differently when the specified item is not found in the set</li>
+                        <ul>
+                            <li><span class = "data-type">remove</span> method raises a <span class = "data-type">KeyError</span> exception</li>
+                            <li><span class = "data-type">discard</span> method does not raise an exception</li>
+                        </ul>
+                    </ul>
+            </ul>
+            <h2>Using the <span class = "data-type">for</span> loop, <span class = "data-type">in</span>, and <span class = "data-type">not in</span> operators with a set</h2>
+            <ul class="listing">
+                <li> A <span class = "data-type">for</span> loop can be used to iterate over elements in a set</li>
+                <ul>
+                    <li> General format: <span class = "data-type">for</span> item <span class = "data-type">in</span> set</li>
+                    <li>The loop iterates once for each element in the set</li>
+                </ul>
+                <li>The <span class = "data-type">in</span> operator can be used to test whether a value exists in a 
+                    set</li>
+                    <ul>
+                        <li>Similarly, <span class = "data-type">not in</span> can be used to test whether value does not exist in 
+                            the set
+                            </li>
+                    </ul>
+            </ul>
+            <h2>Finding the union of sets</h2>
+            <ul class="listing">
+                <li><u>Union of two sets</u>: a set that contains all the elements of both 
+                    sets</li>
+                <li>To find the union of two sets, use the <span class = "data-type">union</span> method</li>
+                <ul>
+                    <li>Format: set1.<span class = "data-type">union</span>(set2)</li>
+
+                </ul>
+                <li>Or use the <span class = "data-type">|</span> operator</li>
+                <ul>
+                    <li>Format: set1 <span class = "data-type">|</span> set2</li>
+
+                </ul>
+                <li>Both techniques return a new set that contains the union of both sets</li>
+            </ul>
+            <h2>Finding the intersection of sets</h2>
+            <ul class="listing">
+                <li><u>Intersection of two sets:</u> a set that contains all elements that exist in both sets</li>
+                <li>To find the intersection of two sets, use the <span class = "data-type">intersection</span> method</li>
+                <ul>
+                    <li>Format: set1.<span class = "data-type">intersection</span>(set2)</li>
+
+                </ul>
+                <li>Or use the <span class = "data-type">&</span> operator</li>
+                <ul>
+                    <li>Format: set1 <span class = "data-type">&</span> set2</li>
+                </ul>
+                <li>Both techniques return a new set that contains the intersection of the sets</li>
+            </ul>
+            <h2>Finding the difference of sets</h2>
+            <ul class="listing">
+                <li><u>Difference of two sets</u>: a set that contains the elements that exist in the first set but not in the second set</li>
+                <li>To find the difference of two sets: Use the <span class = "data-type">difference</span> method </li>
+                <ul>
+                    <li>Format: set1.<span class = "data-type">difference</span>(set2)</li>
+
+                </ul>
+                <li>Or, use the <span class = "data-type">-</span> operator</li>
+                <ul>
+                    <li>Format: set1 <span class = "data-type">-</span> set2</li>
+                </ul>
+                <li>Both techniques return a new set that contains the differnece of the sets </li>
+            </ul>
+            <h2>Finding the symmetric difference of sets</h2>
+            <ul class="listing">
+                <li><u>Symmetric Difference of two sets</u>: a set that contains the elements that are 
+                    not shared by the two sets. In other words, the union of (set1 - set2) and 
+                    (set2 - set1)</li>
+                <li>To find the symmetric difference of two sets, use the <span class = "data-type">symmetric_difference</span> 
+                    method</li>
+                    <ul>
+                        <li>Format: set1.<span class = "data-type">symmetric_difference</span></li>
+                    </ul>
+                <li>Or use the <span class = "data-type">^</span> operator</li>
+                    <ul>
+                        <li>Format: set1 <span class = "data-type">^</span> set2</li>
+                    </ul>
+                <li>Both techniques return a new set that contains the symmetric difference of both sets</li>
+            </ul>
+            <h2>Finding Subsets and Supersets</h2>
+            <ul class="listing">
+                <li> Set A is subset of set B if all the elements in set A are included in set 
+                    B</li>
+                <li>To determine whether set A is subset of set B, use the <span class = "data-type">issubset</span> method</li>
+                    <ul>
+                        <li> Format: setA.<span class = "data-type">issubset</span>(setB)</li>
+                    </ul>
+                    <li>Or, use the <span class="data-type">&lt;=</span> operator
+                        <ul>
+                            <li>Format: set1 <span class="data-type">&lt;=;</span> set2</li>
+                        </ul>
+                    </li>
+                    
+                <li>Both techniques return <span class = "data-type">True</span> or <span class = "data-type">False</span> based on whether setA is subset of 
+                    setB or not
+                    </li>
             
+                <li>Set A is superset of set B if it contains all the elements of Bin set A 
+                    are included in set B</li>
+                <li>To determine whether set A is subset of set B, use the <span class = "data-type">issuperset</span> 
+                    method </li>
+                    <ul>
+                        <li> Format: setA.<span class = "data-type">issuperset</span>(setB)</li>
+                    </ul>
+                <li>Or, use the <span class = "data-type">&gt;=</span> operator</li>
+                    <ul>
+                    <li>Format: set1 <span class = "data-type">&gt;=</span> set2</li>
+                    </ul>
+                <li> Both techniques return <span class = "data-type">True</span> or <span class = "data-type">False</span> based on whether setA is a 
+                    superset of setB or not
+                    </li>    
+            </ul>
+            <div class="code">
+                <textarea class="large" id="set-code1" rows="6" cols="50">my_set = {1, 2, 3, 4, 5}
+print("Original set: ", my_set)
+print("Adding 6 to set: ", my_set.add(6))
+print("Removing 3 from set: ", my_set.discard(3))
+print("Updated set: ", my_set)
+                </textarea>
+                <br>
+                <button onclick="runPython('set-code1', 'output1')">Run</button>
+                <h4>Output:</h4>
+                <pre class="output" id="output1"></pre>
+            </div>
+            <h2><span class = "data-type">set </span>operations</h2>
+            <ul class="listing">
+                <li>We can create a <span class="data-type">set</span> using curly braces: my_set = {1, 2, 3}</li>
+                <ul>
+                    <li>Sets are unordered collections of unique elements</li>
+                    <li>Adding elements to a set can be done using the <strong>add()</strong> method</li>
+                    <li>To remove an element, use <strong>discard()</strong> (it won't raise an error if the element isn't found)</li>
+                </ul>
+                <li>We can perform operations like intersection, union, and difference between sets:</li>
+                <ul>
+                    <li><strong>Intersection</strong>: my_set & other_set (returns common elements)</li>
+                    <li><strong>Union</strong>: my_set | other_set (combines all elements)</li>
+                    <li><strong>Difference</strong>: my_set - other_set (returns elements only in my_set)</li>
+                </ul>
+            </ul>
+            
+            <div class="code">
+                <textarea class="large" id="python-code2" rows="5" cols="50">str1 = "Hello World!"
+my_set = set(str1)
+n = len(my_set)
+
+print("my_set gives: ", my_set)
+print("Set size n gives: ", n)
+print("my_set[1 : n] gives: ", list(my_set)[1:n])
+print("my_set[:] gives: ", list(my_set)[:])
+print("my_set[2:n-1] gives: ", list(my_set)[2:n-1])
+print("my_set[1 : n : 2] gives: ", list(my_set)[1:n:2])
+
+                </textarea>
+                <br>
+                <button onclick="runPython('python-code2', 'output2')">Run</button>
+                <h4>Output:</h4>
+                <pre class="output" id="output2"></pre>
+            </div>
+
+            <h2> <span class = "data-type">str</span> functions</h2>
+            <p>The <span class = "data-type">str</span> data type includes numerous built in funcitons</p>
+            <div class="code">
+                <textarea class="large" id="python-code3" rows="5" cols="50">numbers = [1, 2, 3, 4, 5]
+
+print("Original list: ", numbers)
+print("List sorted in ascending order: ", sorted(numbers))  # Sort the list in ascending order
+print("List sorted in descending order: ", sorted(numbers, reverse=True))  # Sort the list in descending order
+print("Reversed list: ", numbers[::-1])  # Reverse the list
+print("List sum: ", sum(numbers))  # Calculate the sum of the list
+print("List length: ", len(numbers))  # Get the number of elements in the list
+
+numbers.append(6)  # Add element to the list
+print("After appending 6: ", numbers)
+
+numbers.remove(3)  # Remove element from the list
+print("After removing 3: ", numbers)
+
+print("Count of 2 in the list: ", numbers.count(2))  # Count occurrences of 2
+print("Is 4 in the list? ", 4 in numbers)  # Check if 4 is in the list
+                    
+
+                </textarea>
+                <br>
+                <button onclick="runPython('python-code3', 'output3')">Run</button>
+                <h4>Output:</h4>
+                <pre class="output" id="output3"></pre>
+            </div>
                 
-            </ul>
-            <h3><span class = "data-type">float</span> type:</h3>
-            <ul>
-                <li >Stands for floating point represenation</li>
-                <li>used to represent real num,bers up to a certain precision</li>
-            </ul>
-            <img src="./assets/float examples.png">
+        
 
-            <h3><span class = "data-type">bool</span> type</h3>
-            <ul>
-                <li>Used to represent Boolean/ logical values
-                </li>
-                <li> <span class = "boolean">True</span> and <span class = "boolean">False</span></li>
-                <li>originates from logical tests</li>
-            </ul>
-            <img src="./assets/bool example.png">
-            <h3><span class = "data-type">str</span> type</h3>
-            <ul>
-                <li>Sequence of characters</li>
-                <li>Use single or double quotationsc: "Sam" or 'Sam'</li>
-                <li>more about string in chapter 1.3</li>
-            </ul>
 
-            <h2>Casting</h2>
-            <p>Casting refers to coverting a variable from one data type to another</p>
-            <img src="./assets/casting example1.png">
-            <img src="./assets/casting example 2.png">
+            
                 
         </main>
         <div id="compiler" class="compiler">

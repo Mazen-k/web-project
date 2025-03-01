@@ -163,30 +163,55 @@ print("L[1 : n : 2] gives: ", L[1 : n : 2])
                 <pre class="output" id="output6"></pre>
             </div>
             <h2>More <span class = "data-type">list </span>functionalities</h2>
-            <ul class = "listing">
-                <li><span class = "data-type">.copy() </span> used to copy content of a list and store them in another</li>
+            <p>Lists have alot of built in functions some of which are:</p>
+            <table border = "1" class = "list-functions">
+                <thead>
+                    <tr>
+                        <th>Function</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class = "data-type">.append(</span>x<span class = "data-type">)</span></td>
+                        <td>Addes x to the end of the list</td>
+                    </tr>
+                    <tr>
+                        <td><span class = "data-type">.remove(</span>x<span class = "data-type">)</span></td>
+                        <td>Removes first occurence of x</td>
+                    </tr>
+                    <tr>
+                        <td><span class = "data-type">.count(</span>x<span class = "data-type">)</span></td>
+                        <td>Returns the number of times x appears in the list</td>
+                    </tr>
+                    <tr>
+                        <td><span class = "data-type">.index(</span>x<span class = "data-type">)</span></td>
+                        <td>Returns the index of the first occurence of x</td>
+                    </tr>
+                    <tr>
+                        <td><span class = "data-type">.pop(</span>i<span class = "data-type">)</span></td>
+                        <td>Removes and returns the elemnt at index i</td>
+                    </tr>
+                    <tr>
+                        <td><span class = "data-type">.insert(</span>i , x<span class = "data-type">)</span></td>
+                        <td>Insterts item x at index i</td>
+                    </tr>
+                    <tr>
+                        <td><span class = "data-type">.copy(</span><span class = "data-type">)</span></td>
+                        <td>Returns a shallow copy of the list</td>
+                    </tr>
+                    <tr>
+                        <td><span class = "data-type">.sort(</span><span class = "data-type">)</span></td>
+                        <td>Sorts the list in ascending order</td>
+                    </tr>
+                    <tr>
+                        <td><span class = "data-type">.reverse(</span><span class = "data-type">)</span></td>
+                        <td>Reverses the order of the elements in the list</td>
+                    </tr>
+                </tbody>
 
-                <li><span class = "data-type">in </span>opeartor checks if an element exits in the list returning a <span class = "data-type">bool </span>value</li>
-                <li>List concatenation: we can join two or more lists together using the <span class = "operator">+</span> operation</li>
-            </ul>
-
-            <div class="code">
-                <textarea class="large" id="python-code7" rows="5" cols="50">
-L = ["Hello World!", 12, 3.14, False]
-L2 = L.copy();
-print("L2: ", L2)
-print("L + L2 gives: ", L + L2)
-print("Is number 1 in L?")
-if 1 in L:
-    print("YES")
-else:
-    print("NO")
-                </textarea>
-                <br>
-                <button onclick="runPython('python-code7', 'output7')">Run</button>
-                <h4>Output:</h4>
-                <pre class="output" id="output7"></pre>
-            </div>
+            </table>
+            
 
 
             <h2><span class = "data-type">list </span>Applications</h2>

@@ -266,6 +266,9 @@ main p {
 main ul {
     padding-left: 20px;
 }
+.indent{
+    tab-size : 4;
+}
 
 .listing{
     font-size: 18px;
@@ -701,6 +704,27 @@ input[type ="submit"]:active{
 
 /* styling for info page ends here */
 
+/* styling for chapter14 */
+
+.list-functions{
+    width:70% ;
+    border-collapse : collapse;
 
 
+}
+.list-functions thead{
+    background-color:#306998;
+
+}
+.list-functions thead th{
+    color:White;
+}
+.list-functions tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+.list-functions td {
+    padding: 10px;
+    color: #333;
+}
+/* styling for chapter14 ends here */
 

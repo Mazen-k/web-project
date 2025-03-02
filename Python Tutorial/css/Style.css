@@ -442,6 +442,9 @@ code{
     width: 400px;
     z-index: 4;
 }
+.toggle-btn{
+    display: none;
+}
 /* styling for course pages ends here */
 
 
@@ -732,7 +735,10 @@ input[type ="submit"]:active{
 /* styling for chapter14 ends here */
 
 /* media queries */
-@media (max-width: 768px) {
+@media (max-width: 770px) {
+    .body{
+        display: block;
+    }
     .compiler {
         display: none;
     }
@@ -758,15 +764,11 @@ input[type ="submit"]:active{
 
     main.visible {
         display: block;
-        grid-column-start: 1;
-        grid-column-end: 2;
     }
-    #course-foot{
-        grid-column-start: 1;
-        grid-column-end: 2;
-    }
+   
 
     .toggle-btn {
+        display: block;
         font-size: large;
         position: absolute;
         top: 10px;

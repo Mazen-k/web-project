@@ -736,7 +736,7 @@ input[type ="submit"]:active{
 
 /* media queries */
 @media (max-width: 770px) {
-    .body{
+    .body {
         display: block;
     }
     .compiler {
@@ -750,22 +750,15 @@ input[type ="submit"]:active{
         background: #3776AB;
         color: white;
         transition: transform 0.3s ease-in-out;
-        transform: translateX(0); 
+        transform: translateX(-100%);
         z-index: 1000;
     }
 
-    main {
-        display: none;
+    .nav.visible {
+        transform: translateX(0);
     }
 
-    .nav.hidden {
-        transform: translateX(-100%);
-    }
 
-    main.visible {
-        display: block;
-    }
-   
 
     .toggle-btn {
         display: block;
@@ -781,6 +774,7 @@ input[type ="submit"]:active{
         z-index: 1100;
     }
 }
+
 
 @media (max-width: 1000px) {
     #compiler{

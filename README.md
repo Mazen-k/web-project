@@ -39,6 +39,14 @@ This project is licensed under the MIT License.
 - Jamal El Kassar
 - Adam Hamidi Sakr
 
+## Resources
+- Bootstrap for homepage Excluding navbar and footer. home icon in sidebar in all course pages.
+- Chatgpt assisted scripting for shrinking nested lists in sidebar for course pages, API skeleton for example code compiler, and disapearing terms and conditions div.
+- Embed for compiler from tinker.io. API for compiler is emkc.org free API
+- Images are a screen grab from Anaconda's Spyder console.
+- Font is IBM Plex Sans from Google Fonts
+- Course content is derived from a mix of public sources and Lau's CSC243 documents.
+
 ## Contact
 
 For questions or suggestions, feel free to open an issue on GitHub.

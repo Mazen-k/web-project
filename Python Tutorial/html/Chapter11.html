@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="Style.css">
+        <link rel="stylesheet" href="../css/Style.css">
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-        <script defer src="Script.js"></script>
+        <script defer src="../javascript/Script.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <title>Learn.py</title>
         
@@ -15,7 +17,8 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="white" class="bi bi-house-door" viewBox="0 0 16 16"> 
                   <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4z"/>
                 </svg>
-                <h1 style="margin: 0;">Learn.Py</h1>
+                <h1 style="margin: 0;">Learn.Py</h1> 
+                
               </div>
             <h3 class="course-title" >Python Basics</h3>
             <ul class = "chapters">
@@ -83,99 +86,90 @@
 
 
         <main>
-            <h1 class = "page-title">Functions</h1>
-
-            <h2>What is a function</h2>
-            <ul class = "listing">
-                <li>A set of statements grouped together that perform a specific task</li>
-                <li>A function is characterized by its</li>
-                <ul>
-                    <li>name (usually describes the task being performed)</li>
-                    <li>input parameters</li>
-                    <li>return value</li>
-                </ul>
-                <li>Function can return:</li>
-                <ul>
-                    <li>A value of any type(<span class = "data-type">int</span>,<span class = "data-type">float</span>,<span class = "data-type">bool</span>...) </li>
-                    <li>Nothing, thus return value is <span class = "data-type">NoneType</span></li>
-                    
-                </ul>
-            </ul>
-            <h2>Built in functions </h2>
-            <ul class = "listing">
-               
-                <li>We have seen many functions so far</li>
-                <ul>
-                    <li>Input/Output: <span class = "data-type">input()</span>, <span class = "data-type">print()</span></li>
-                    <li>Type-casting: <span class = "data-type">int()</span>, <span class = "data-type">bool()</span></li>
-                    <li>Others: <span class = "data-type">len()</span>, <span class = "data-type">type()</span></li>
-                </ul>
-                
-                <li>Other useful functions can be accsed from modules</li>
-                <ul>
-                    <li>Example: <span class = "data-type">math </span>module: <span class = "data-type">ceil()</span>, <span class = "data-type">sqrt()</span>, <span class = "data-type">cos()</span>, <span class = "data-type">sin()</span></li>
-                    
-                </ul>
-               
-            </ul>
-        
-            <div class="code">
-                <textarea class="large" id="python-code15" rows="5" cols="50">
-import math
-x = 45.56
-print("rounding x: ", math.ceil(x))
-print("cos(x):" , math.cos(x))
-print("log(x): ", math.log(x))
-print("square root of x: ", math.sqrt(x))
-                </textarea>
-                <br>
-                <button onclick="runPython('python-code15','output-15')">Run</button>
-                <h4>Output:</h4>
-                <pre class="output" id="output-15"></pre>
-            </div>
+            <h1 class = "page-title">Strings</h1>
+            <h2><span class = "data-type">str </span>data type</h2>
             
-
-            <h2>User defined functions</h2>
+            
+               
+            <p>In Python, a string is a sequnce of characters enclosed in single or double quotes</p>
             <ul class = "listing">
-                <li>In Python we can define our own functions using <span class = "data-type">def</span></li>
-                <li>
-                    Syntax for defining a function:<br>
-                    <span class = "data-type">def </span><strong>FunctionName</strong>(input1,input2....., input N):
-                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statement
-                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statement
-                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class = "data-type">return </span>value
-                </li>
-                <li>Syntax for callinf a function: x = FunctionName(a,b,c...)</li>
-                
-                <li>Once <span class = "data-type">return </span> is excuted the function will stop and any code after it <strong>will NOT </strong>excute </li>
-                <li>Variable defined inside a function(local varibales) <strong>can NOT</strong> be accesed outside the function</li>
+                <li>str1 = "Sam"</li>
+                <li>str2 = 'Sam'</li>
+            </ul>
+
+            <h2><span class = "data-type">str </span> indexing </h2>
+            
+            <ul class = "listing">
+                <li> Characters can be accesed by specifying the index</li>
+                <ul>
+                    <li>Non-negative indices: starting from 0 and end at length -1</li>
+                    <li>Negative indies: from right to left (reverse order)</li>
+                </ul>
+                <li>Strings are <strong>immutable</strong> data structures meaning they <strong>can  NOT </strong> be modifed</li>
             </ul>
             <div class="code">
-                <textarea class="large" id="python-code16" rows="5" cols="50">
-def Sum(a,b):
-    return a + b 
-    print("Thi will not be printed")
+                <textarea class="large" id="python-code11" rows="6" cols="50">
+str1 = "Sam"
+n = len(str1)
+print("First element: ", str1[0])
+print("Last element: ", str1[n - 1])
 
-def Parity(a):
-    if(a % 2) == 0:
-        return "even"
-    else:
-        return "odd" 
 
-x = 2
-y = 7
-print(Sum(x,y))
-print("x is: ", Parity(x))
-print("y is: ", Parity(y))
                 </textarea>
                 <br>
-                <button onclick="runPython('python-code16','output-16')">Run</button>
+                <button onclick="runPython('python-code11', 'output11')">Run</button>
                 <h4>Output:</h4>
-                <pre class="output" id="output-16"></pre>
+                <pre class="output" id="output11"></pre>
             </div>
-           
-            
-        
+            <h2><span class = "data-type">str </span>slicing</h2>
+            <ul class = "listing">
+                <li>We can slice a <span class = "data-type">str</span> using str1[start:end]</li>
+                <ul>
+                    <li>Slices the string at indices start, start + 1, start + 2 ......, end - 1</li>
+                    <li>The "end" index is <strong>exclusive</strong> so L[end] is <strong>NOT included</strong></li>
+                </ul>
+                <li>Default values are 0 for start and n for end where n is the size of the <span class = "data-type">str</span></li>
+                <li>It is also possible to include a step , str1[start:end:step]</li>
+                
+            </ul>
+            <div class="code">
+                <textarea class="large" id="python-code12" rows="5" cols="50">
+str1 = "Hello World!"
+n = len(str1)
+print("str1[1 : n] gives: ", str1[1 : n])
+print("str1[:] gives: ", str1[:])
+print("str1[2:n-1] gives: ", str1[2:n-1])
+print("str1[1 : n : 2] gives: ", str1[1 : n : 2])
+
+                </textarea>
+                <br>
+                <button onclick="runPython('python-code12', 'output12')">Run</button>
+                <h4>Output:</h4>
+                <pre class="output" id="output12"></pre>
+            </div>
+
+            <h2> <span class = "data-type">str</span> functions</h2>
+            <p>The <span class = "data-type">str</span> data type includes numerous built in funcitons</p>
+            <div class="code">
+                <textarea class="large" id="python-code13" rows="5" cols="50">
+text = "hello world"
+
+print(text.upper())       # Convert to uppercase
+print(text.lower())       # Convert to lowercase
+print(text.capitalize())  # Capitalize first letter
+print(text.title())       # Capitalize each word
+print(text.strip())       # Removes leading & trailing spaces
+
+print(text.replace("hello", "hi"))  #Replace substring
+print(text.count("l"))    # Count occurrences of 'l'
+print(text.startswith("hello"))  # Check if starts with 'hello'
+
+                </textarea>
+                <br>
+                <button onclick="runPython('python-code13', 'output13')">Run</button>
+                <h4>Output:</h4>
+                <pre class="output" id="output13"></pre>
+            </div>
                 
         </main>
         

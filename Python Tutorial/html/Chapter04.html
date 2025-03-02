@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="Style.css">
+        <link rel="stylesheet" href="../css/Style.css">
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-        <script defer src="Script.js"></script>
+        <script defer src="../javascript/Script.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <title>Learn.py</title>
         
@@ -36,7 +38,7 @@
                             <a href = "Chapter04.html">0.4 Selection</a> 
                         </li>
                         <li>
-                            <a href = "Chapter05.html">0.5 Repetion</a> 
+                            <a href = "Chapter05.html">0.5 Repetition</a> 
                         </li>
                         
                     </ul>
@@ -81,93 +83,86 @@
         </aside>
 
         <main>
-            <h1>Repetition in Python</h1>
-            <p>Repetition statements allow a program to execute a block of code multiple times based on a condition. This enables iteration and automates repetitive tasks.</p>
-        
-            <h2>Types of Repetition Statements</h2>
-            <p>Python provides multiple ways to implement loops for repetition.</p>
+            <h1>Selection in Python</h1>
+            <p>Selection statements allow a program to make decisions based on conditions. This enables control over the program's flow.</p>
+            
+            <h2>Types of <span></span>Selection Statements</h2>
+            <p>Python provides multiple ways to implement decision-making logic.</p>
             <ul class="listing">
-                <li><code><span class="boolean">while</span></code> loop</li>
-                <li><code><span class="boolean">for</span></code> loop</li>
-                <li><span class="boolean">Nested</span> loops</li>
-                <li>Using <code><span class="boolean">break</span></code> and <code><span class="boolean">continue</span></code> statements</li>
+                <li><span class="boolean">if</span> statement</li>
+                <li><span class="boolean">if-else</span> statement</li>
+                <li><span class="boolean">if-elif-else</span> statement</li>
+                <li>Nested selection statements</li>
             </ul>
-        
-            <h2>The <code><span class="boolean">while</span></code> Loop</h2>
-            <p>The <code>while</code> loop executes a block of code as long as a specified condition evaluates to <code>True</code>.</p>
+            
+            <h2>The <span class="boolean">if</span> Statement</h2>
+            <p>The <span class="boolean">if</span> statement allows execution of a block of code only if a specified condition evaluates to <code>True</code>.</p>
             <p>Example:</p>
             <div class="code">
-                <textarea class="small" id="python-code1" rows="5" cols="50" tabindex="-1" wrap="off">n = 5
-i = 1
-while i <= n:
-    print(i)
-    i += 1
-                </textarea>
+                <textarea class="small" id="python-code1" rows="5" cols="50">x = -10
+if x < 0:
+    x = -x
+print("Absolute value:", x)</textarea>
                 <br>
                 <button onclick="runPython('python-code1', 'output1')">Run</button>
                 <h4>Output:</h4>
                 <pre class="output" id="output1"></pre>
             </div>
-        
-            <h2>The <code><span class="boolean">for</span></code> Loop</h2>
-            <p>The <code><span class="boolean">for</span></code> loop iterates over sequences like lists, tuples, and ranges, assigning each element to a variable and executing the loop body. By default, it increments by 1, but a parameter can be set to define a different step size.</p>
-
-
+            
+            <h2>The <span class="boolean">if-else</span> Statement</h2>
+            <p>If the condition in an <span class="boolean">if</span> statement evaluates to <code>False</code>, the <span class="boolean">else</span> block executes.</p>
             <p>Example:</p>
             <div class="code">
-                <textarea class="small" id="python-code2" rows="5" cols="50">n = 5
-for i in range(1, n+1):
-    print(i)</textarea>
+                <textarea class="large" id="python-code2" rows="5" cols="50">x = 5
+if x % 2 == 0:
+    print("Even number")
+else:
+    print("Odd number")</textarea>
                 <br>
                 <button onclick="runPython('python-code2', 'output2')">Run</button>
                 <h4>Output:</h4>
                 <pre class="output" id="output2"></pre>
             </div>
-        
-            <h2>Nested Loops</h2>
-            <p>Loops can be nested inside one another to work with multi-dimensional data or complex patterns.</p>
+            
+            <h2>The <span class="boolean">if-elif-else</span> Statement</h2>
+            <p>Used for multi-way branching, allowing several conditions to be checked in sequence.</p>
             <p>Example:</p>
             <div class="code">
-                <textarea class="small" id="python-code3" rows="5" cols="50">n = 4
-for i in range(1, n+1):
-    for j in range(1, i+1):
-        print(j, end=" ")
-    print()</textarea>
+                <textarea class="large" id="python-code3" rows="5" cols="50">score = 85
+if score >= 90:
+    print("Grade: A")
+elif score >= 80:
+    print("Grade: B")
+elif score >= 70:
+    print("Grade: C")
+else:
+    print("Grade: F")</textarea>
                 <br>
                 <button onclick="runPython('python-code3', 'output3')">Run</button>
                 <h4>Output:</h4>
                 <pre class="output" id="output3"></pre>
             </div>
-        
-            <h2>Using <code><span class="boolean">break</span></code> and <code><span class="boolean">continue</span></code></h2>
-            <p>The <code><span class="boolean">break</span></code> statement exits the loop early, while <code><span class="boolean">continue</span></code> skips the current iteration and moves to the next.</p>
-            <p>Example for continue statement:</p>
+            
+            <h2>Nested Selection</h2>
+            <p>Selection statements can be nested inside one another to evaluate multiple conditions.</p>
+            <p>Example:</p>
             <div class="code">
-                <textarea class="small" id="python-code4" rows="5" cols="50">for i in range(1, 10):
-    if i == 5:
-        break
-        print(i)
-    print("Loop stopped at:", i)</textarea>
+                <textarea class="large" id="python-code4" rows="5" cols="50">x = 6
+y = 12
+if x % 2 == 0:
+    if y % 2 == 0:
+        print("Both x and y are even")
+    else:
+        print("x is even, y is odd")
+else:
+    print("x is odd")</textarea>
                 <br>
                 <button onclick="runPython('python-code4', 'output4')">Run</button>
                 <h4>Output:</h4>
                 <pre class="output" id="output4"></pre>
             </div>
-            <p>Example for <span class="boolean">continue</span> statement:</p>
-            <div class="code">
-                <textarea class="small" id="python-code5" rows="5" cols="50">for i in range(1, 10):
-                if i == 5:
-                    continue
-                print(i)</textarea>
-                <br>
-                <button onclick="runPython('python-code5', 'output5')">Run</button>
-                <h4>Output:</h4>
-                <pre class="output" id="output5"></pre>
-            </div>
-
         </main>
-        
-        
+
 
         <div id="compiler" class="compiler">
             <iframe class="iframe" src="https://trinket.io/embed/python3" class = "compiler1"></iframe>

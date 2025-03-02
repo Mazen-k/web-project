@@ -85,6 +85,93 @@
 
 
         <main>
+            <h1 class = "page-title">Dictionaries</h1>
+        <h2><span class = "data-type">dict </span>data type</h2>
+        <ul class = "listing">
+            <li>Objects of type <span class = "data-type">dict </span>contain values like lists excpet that we index them uisng keys </li>
+            <li>Think of a dictionary as a set of key-value pairs
+            <li>To create an empty dictionary use:</li>
+            <ul>
+                <li>D = {} or D = <span class = "data-type">dict()</span></li>
+            </ul>
+            <li>Sytanx to define a dictionary with specific key-value mappings</li>
+            <ul>
+                <li>D = {key1: value1 , key2: value2, ...}</li>
+            </ul>
+            <li> Elements in a dictionary are unsorted and cannot be acces with an index</li>
+            <li>Dictionaries are <strong>mutable</strong>but keys must be <strong>immutable</strong></li>
+        
+        </ul>
+        <h2>Operations/Queries on dictionaries</h2>
+        <ul>
+            <li>Search for a key: </li>
+            <ul><li>key in d: returns <span class = "boolean">True</span> or <span class = "boolean">False</span></li></ul>
+            <li>Acces value of a key</li>
+            <ul><li>D[key] : gives an error if key is not in D</li></ul>
+            <li>Delete a key</li>
+            <ul><li><span class = "data-type">del</span> D[key]: gives an error if key is not in D</li></ul>
+            <li>Add new value for a key</li>
+            <ul><li>D[key] = value</li></ul>
+        </ul>
+        <h2>More <span class = "data-types">Built in functions</span></h2>
+    <table border = "1" class = "list-functions">
+        <thead>
+            <tr>
+                <th>Function</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class = "data-type">len(</span>D<span class = "data-type">)</span></td>
+                <td>Returns the number of keys in the D.</td>
+            </tr>
+            <tr>
+                <td>D.<span class = "data-type">get(</span>key, default<span class = "data-type">)</span></td>
+                <td>Gets the value associated with given key. If the key is not in D it returns the default msg</td>
+            </tr>
+            <tr>
+                <td>D.<span class = "data-type">pop(</span>key, default<span class = "data-type">)</span></td>
+                <td>Deletes the key from D and return its value.If the key is not in D it returns the default msg</td>
+            </tr>
+            <tr>
+                <td>D.<span class = "data-type">keys(</span><span class = "data-type">)</span></td>
+                <td>Returns all keys in D as a sequence </td>
+            </tr>
+            <tr>
+                <td>D.<span class = "data-type">values(</span><span class = "data-type">)</span></td>
+                <td>Returns all values in D as a sequence</td>
+            </tr>
+            <tr>
+                <td>D.<span class = "data-type">copy(</span><span class = "data-type">)</span></td>
+                <td>Copies the content of D </td>
+            </tr>
+            
+            
+        </tbody>
+
+    </table>
+    <h2><span class = "data-type">dict </span> applications</h2>
+    <p>We can use dictionaries to count the occurence of each charcter in a string</p>
+    <div class="code">
+        <textarea class="large" id="python-code60" rows="5" cols="50">
+str1  = "Hello World!"
+D = {}
+for char in str1:
+    if char in D:
+        D[char] += 1
+    else:
+        D[char] = 1
+for key in D:
+    print(key, ":",D[key])
+            
+
+        </textarea>
+        <br>
+        <button onclick="runPython('python-code60', 'output60')">Run</button>
+        <h4>Output:</h4>
+        <pre class="output" id="output60"></pre>
+    </div>
              
         </main>
         

@@ -7,13 +7,9 @@
         <script src="//onlinegdb.com/embed/js/uEEjUd_tO_?theme=dark"></script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Welcome to <b>Learn.py</b> your go-to platform for mastering Python! Whether you're a beginner or looking to refine your skills, we offer a structured, interactive learning experience with hands-on exercises and real-world examples.
-
-        Our content covers everything from Python fundamentals, including syntax, loops, and functions, to more advanced concepts, ensuring a solid foundation for all learners.
-        
-        With practical projects and industry-relevant content, Learn.Py caters to a broad audience, helping you build confidence and expertise in Python.</p></div>
-">
+        <meta name="description" content="Welcome to Learn.py, your go-to platform for mastering Python! Whether you're a beginner or looking to refine your skills, we offer a structured, interactive learning experience with hands-on exercises and real-world examples. Our content covers everything from Python fundamentals, including syntax, loops, and functions, to more advanced concepts, ensuring a solid foundation for all learners. With practical projects and industry-relevant content, Learn.py caters to a broad audience, helping you build confidence and expertise in Python.">
         <meta name="keywords" content="Python, sets, programming, Python tutorial">
+        >
         <title>Learn.py</title>
     </head>
     <body class="body">
@@ -90,15 +86,23 @@
             </ul>
         </aside>
         <main>
+
+
+            
+
+
+
+
+
+
             <h1 class="page-title">Sets</h1>
             
             <h2>Python<span class = "data-type"> set </span></h2>
             
-            
-               
-            <li>A Python <span class = "data-type">set </span> is an object that stores a collection of data in the 
-                same way as a mathematical set</li>
             <ul class = "listing">
+               
+                <li>A Python <span class = "data-type">set </span> is an object that stores a collection of data in the 
+                same way as a mathematical set</li>
                 <li>All items must be unique(no duplicates) </li>
                 <li> Set is unordered (insertion order not maintained)</li>
                 <li> Elements in a set can be of different data types</li>
@@ -119,135 +123,130 @@
                 
             </ul>
             <h2>Elements in a set</h2>
-            <ul class = "listing">
-                <li><span class = "data-type">len</span>(set) function: returns the number of elements in the set</li>
-                <li> <span class = "data-type">add</span>(element) method: adds an element (of any type) to a set</li>
-                <li><span class = "data-type">update</span>(argument) method: adds a group of elements to a set</li>
-                <ul><li> <i>argument</i> must be a sequence containing  iterable elements, 
-                    and each of the elements is added to the set
-                    </li></ul>
-                <li><span class = "data-type">pop</span>() method: removes and returns an arbitrary (random) set 
-                    element.</li>
-                <li><span class = "data-type">clear</span>() method: clears all the elements of the set</li>
-                <li><span class = "data-type">remove</span>(element) and discard(element) methods are used to remove 
-                    the specified element from the set</li>
-                    <ul>
-                        <li> The item that should be removed is passed as an argument</li>
-                        <li>Behave differently when the specified item is not found in the set</li>
-                        <ul>
-                            <li><span class = "data-type">remove</span> method raises a <span class = "data-type">KeyError</span> exception</li>
-                            <li><span class = "data-type">discard</span> method does not raise an exception</li>
-                        </ul>
-                    </ul>
-            </ul>
-            <h2>Using the <span class = "data-type">for</span> loop, <span class = "data-type">in</span>, and <span class = "data-type">not in</span> operators with a set</h2>
-            <ul class="listing">
-                <li> A <span class = "data-type">for</span> loop can be used to iterate over elements in a set</li>
-                <ul>
-                    <li> General format: <span class = "data-type">for</span> item <span class = "data-type">in</span> set</li>
-                    <li>The loop iterates once for each element in the set</li>
-                </ul>
-                <li>The <span class = "data-type">in</span> operator can be used to test whether a value exists in a 
-                    set</li>
-                    <ul>
-                        <li>Similarly, <span class = "data-type">not in</span> can be used to test whether value does not exist in 
-                            the set
-                            </li>
-                    </ul>
-            </ul>
-            <h2>Finding the union of sets</h2>
-            <ul class="listing">
-                <li><u>Union of two sets</u>: a set that contains all the elements of both 
-                    sets</li>
-                <li>To find the union of two sets, use the <span class = "data-type">union</span> method</li>
-                <ul>
-                    <li>Format: set1.<span class = "data-type">union</span>(set2)</li>
-
-                </ul>
-                <li>Or use the <span class = "data-type">|</span> operator</li>
-                <ul>
-                    <li>Format: set1 <span class = "data-type">|</span> set2</li>
-
-                </ul>
-                <li>Both techniques return a new set that contains the union of both sets</li>
-            </ul>
-            <h2>Finding the intersection of sets</h2>
-            <ul class="listing">
-                <li><u>Intersection of two sets:</u> a set that contains all elements that exist in both sets</li>
-                <li>To find the intersection of two sets, use the <span class = "data-type">intersection</span> method</li>
-                <ul>
-                    <li>Format: set1.<span class = "data-type">intersection</span>(set2)</li>
-
-                </ul>
-                <li>Or use the <span class = "data-type">&</span> operator</li>
-                <ul>
-                    <li>Format: set1 <span class = "data-type">&</span> set2</li>
-                </ul>
-                <li>Both techniques return a new set that contains the intersection of the sets</li>
-            </ul>
-            <h2>Finding the difference of sets</h2>
-            <ul class="listing">
-                <li><u>Difference of two sets</u>: a set that contains the elements that exist in the first set but not in the second set</li>
-                <li>To find the difference of two sets: Use the <span class = "data-type">difference</span> method </li>
-                <ul>
-                    <li>Format: set1.<span class = "data-type">difference</span>(set2)</li>
-
-                </ul>
-                <li>Or, use the <span class = "data-type">-</span> operator</li>
-                <ul>
-                    <li>Format: set1 <span class = "data-type">-</span> set2</li>
-                </ul>
-                <li>Both techniques return a new set that contains the differnece of the sets </li>
-            </ul>
-            <h2>Finding the symmetric difference of sets</h2>
-            <ul class="listing">
-                <li><u>Symmetric Difference of two sets</u>: a set that contains the elements that are 
-                    not shared by the two sets. In other words, the union of (set1 - set2) and 
-                    (set2 - set1)</li>
-                <li>To find the symmetric difference of two sets, use the <span class = "data-type">symmetric_difference</span> 
-                    method</li>
-                    <ul>
-                        <li>Format: set1.<span class = "data-type">symmetric_difference</span></li>
-                    </ul>
-                <li>Or use the <span class = "data-type">^</span> operator</li>
-                    <ul>
-                        <li>Format: set1 <span class = "data-type">^</span> set2</li>
-                    </ul>
-                <li>Both techniques return a new set that contains the symmetric difference of both sets</li>
-            </ul>
-            <h2>Finding Subsets and Supersets</h2>
-            <ul class="listing">
-                <li> Set A is subset of set B if all the elements in set A are included in set 
-                    B</li>
-                <li>To determine whether set A is subset of set B, use the <span class = "data-type">issubset</span> method</li>
-                    <ul>
-                        <li> Format: setA.<span class = "data-type">issubset</span>(setB)</li>
-                    </ul>
-                    <li>Or, use the <span class="data-type">&lt;=</span> operator
-                        <ul>
-                            <li>Format: set1 <span class="data-type">&lt;=;</span> set2</li>
-                        </ul>
-                    </li>
+            <table border = "1" class = "list-functions">
+                <thead>
+                    <tr>
+                        <th>Function</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class = "data-type">len(set)</span><span class = "data-type"></span></td>
+                        <td>Returns the number of elements in the set.</td>
+                    </tr>
+                    <tr>
+                        <td><span class = "data-type">add(element)</span><span class = "data-type"></span></td>
+                        <td>Adds an element to the set</td>
+                    </tr>
+                    <tr>
+                        <td><span class = "data-type">update(iterable)</span><span class = "data-type"></span></td>
+                        <td>Adds multiple elements from an iterable to the set</td>
+                    </tr>
+                    <tr>
+                        <td><span class = "data-type">pop()</span><span class = "data-type"></span></td>
+                        <td>Removes and return a random element</td>
+                    </tr>
+                    <tr>
+                        <td><span class = "data-type">clear()</span><span class = "data-type"></span></td>
+                        <td>Clears all elements in the set</td>
+                    </tr>
+                    <tr>
+                        <td><span class = "data-type">remove(element)</span><span class = "data-type"></span></td>
+                        <td>Removes the specified element(Raises a <span class = "data-type">KeyError</span> exception)</td>
+                    </tr>
+                    <tr>
+                        <td><span class = "data-type">discard()</span><span class = "data-type"></span></td>
+                        <td>Removes the specified element(Does not raise an exception)</td>
+                    </tr>
                     
-                <li>Both techniques return <span class = "data-type">True</span> or <span class = "data-type">False</span> based on whether setA is subset of 
-                    setB or not
-                    </li>
+                </tbody>
+
+            </table>
+
+
+
+            <h2><span class="data-type">for</span> loop, <span class="data-type">in</span>, and <span class="data-type">not in</span> operators</h2>
             
-                <li>Set A is superset of set B if it contains all the elements of Bin set A 
-                    are included in set B</li>
-                <li>To determine whether set A is subset of set B, use the <span class = "data-type">issuperset</span> 
-                    method </li>
-                    <ul>
-                        <li> Format: setA.<span class = "data-type">issuperset</span>(setB)</li>
+                    <ul class="listing">
+                        <li>A <span class="data-type">for</span> loop can be used to iterate over elements in a set</li>
+                        <li>General format: <span class="data-type">for</span> item <span class="data-type">in</span> set</li>
+                        <li>The loop iterates once for each element in the set</li>
+                        <li>The <span class="data-type">in</span> operator tests whether a value exists in a set</li>
+                        <li>The <span class="data-type">not in</span> operator tests whether a value does not exist in a set</li>
                     </ul>
-                <li>Or, use the <span class = "data-type">&gt;=</span> operator</li>
-                    <ul>
-                    <li>Format: set1 <span class = "data-type">&gt;=</span> set2</li>
-                    </ul>
-                <li> Both techniques return <span class = "data-type">True</span> or <span class = "data-type">False</span> based on whether setA is a 
-                    superset of setB or not
-                    </li>    
-            </ul>
+               
+           <h2>Title</h2> <table border="1" class="list-functions">
+    <thead>
+        <tr>
+            <th>Concept</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr>
+            <td>Finding the union of sets</td>
+            <td>
+                <ul class = "listing">
+                    <li><u>Union of two sets</u>: A set that contains all elements of both sets</li>
+                    <li>Use the <span class="data-type">union</span> method: set1.<span class="data-type">union</span>(set2)</li>
+                    <li>Or use the <span class="data-type">|</span> operator: set1 <span class="data-type">|</span> set2</li>
+                    <li>Both techniques return a new set with the union of both sets</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Finding the intersection of sets</td>
+            <td>
+                <ul class = "listing">
+                    <li><u>Intersection of two sets</u>: A set containing elements that exist in both sets</li>
+                    <li>Use the <span class="data-type">intersection</span> method: set1.<span class="data-type">intersection</span>(set2)</li>
+                    <li>Or use the <span class="data-type">&</span> operator: set1 <span class="data-type">&</span> set2</li>
+                    <li>Both techniques return a new set with the intersection of the sets</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Finding the difference of sets</td>
+            <td>
+                <ul class ="listing">
+                    <li><u>Difference of two sets</u>: A set containing elements in the first set but not the second</li>
+                    <li>Use the <span class="data-type">difference</span> method: set1.<span class="data-type">difference</span>(set2)</li>
+                    <li>Or use the <span class="data-type">-</span> operator: set1 <span class="data-type">-</span> set2</li>
+                    <li>Both techniques return a new set with the difference of the sets</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Finding the symmetric difference of sets</td>
+            <td>
+                <ul class = "listing">
+                    <li><u>Symmetric Difference</u>: A set with elements that are not shared by both sets</li>
+                    <li>Use the <span class="data-type">symmetric_difference</span> method: set1.<span class="data-type">symmetric_difference</span>(set2)</li>
+                    <li>Or use the <span class="data-type">^</span> operator: set1 <span class="data-type">^</span> set2</li>
+                    <li>Both techniques return a new set with the symmetric difference of both sets</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Finding subsets and supersets</td>
+            <td>
+                <ul class = "listing">
+                    <li><u>Subset</u>: Set A is a subset of Set B if all elements of A exist in B</li>
+                    <li>Use the <span class="data-type">issubset</span> method: setA.<span class="data-type">issubset</span>(setB)</li>
+                    <li>Or use the <span class="data-type">&lt;=</span> operator: setA <span class="data-type">&lt;=</span> setB</li>
+                    <li>Returns <span class="data-type">True</span> if A is a subset of B</li>
+                    <li><u>Superset</u>: Set A is a superset of Set B if A contains all elements of B</li>
+                    <li>Use the <span class="data-type">issuperset</span> method: setA.<span class="data-type">issuperset</span>(setB)</li>
+                    <li>Or use the <span class="data-type">&gt;=</span> operator: setA <span class="data-type">&gt;=</span> setB</li>
+                    <li>Returns <span class="data-type">True</span> if A is a superset of B</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table></div>
+
             <div class="code">
                 <textarea class="large" id="set-code1" rows="6" cols="50">my_set = {1, 2, 3, 4, 5}
 print("Original set: ", my_set)
@@ -295,8 +294,7 @@ print("my_set[1 : n : 2] gives: ", list(my_set)[1:n:2])
                 <pre class="output" id="output2"></pre>
             </div>
 
-            <h2> <span class = "data-type">str</span> functions</h2>
-            <p>The <span class = "data-type">str</span> data type includes numerous built in funcitons</p>
+            
             <div class="code">
                 <textarea class="large" id="python-code3" rows="5" cols="50">numbers = [1, 2, 3, 4, 5]
 

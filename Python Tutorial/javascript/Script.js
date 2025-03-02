@@ -89,6 +89,13 @@ document.querySelector("form").addEventListener("submit",function(submit){
     }
 });
 
+function toggleSidebar() {
+    document.querySelector('.nav').classList.toggle('hidden');
+    document.querySelector('main').classList.toggle('visible');
+}
+
+
+
 
 
 

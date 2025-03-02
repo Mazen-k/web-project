@@ -1,0 +1,53 @@
+@media (max-width: 768px) {
+    /* Hide the iframe compiler on small screens */
+    .compiler {
+        display: none;
+    }
+
+    /* Make sidebar full screen by default */
+    .nav {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background: #3776AB;
+        color: white;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(0); /* Visible by default */
+        z-index: 1000;
+    }
+
+    /* Hide content initially */
+    main {
+        display: none;
+    }
+
+    /* When sidebar is hidden */
+    .nav.hidden {
+        transform: translateX(-100%);
+    }
+
+    /* Show content when sidebar is hidden */
+    main.visible {
+        display: block;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    #course-foot{
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    /* Toggle button */
+    .toggle-btn {
+        font-size: large;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: #3776AB;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 1100;
+    }
+}

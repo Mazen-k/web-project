@@ -103,7 +103,7 @@
             </ul>
         
             <div class="code">
-                <textarea class="large" id="python-code9" rows="5" cols="50">x = -10
+                <textarea class="large" id="python-code9" rows="5" cols="50">
 location = (12.45534, 13.63850)
 
 print("location=", location)
@@ -115,11 +115,60 @@ print("latitude = ", latitude)
 print("longitude = ",longitude)
                 </textarea>
                 <br>
-                <button onclick="runPython('python-code9','output-1')">Run</button>
+                <button onclick="runPython('python-code9','output-9')">Run</button>
                 <h4>Output:</h4>
-                <pre class="output" id="output-1"></pre>
+                <pre class="output" id="output-9"></pre>
+                </div>
         
-                
+            <h2><span class = "data-type">in</span> and <span class = "data-type">not in</span> oprerators</h2>
+            
+            <p>These operators can be used in lists,strings and tuples to determine wether an element exists</p>
+            <div class="code">
+                <textarea class="large" id="python-code24" rows="5" cols="50">
+str1 = "Sam"
+l = [1,2,3,4]
+tup = (True,False)
+
+print("is a in str1?","a" in str1)
+print("ia 5 in l?", 5 in l)
+print("is 3 not in tup?", 3 not in tup)
+
+
+                </textarea>
+                <br>
+                <button onclick="runPython('python-code24','output-24')">Run</button>
+                <h4>Output:</h4>
+                <pre class="output" id="output-24"></pre>
+                </div>
+
+        
+            
+            <h2><span  class = "boolean">for </span>each loop</h2>
+            <p>The <span class = "boolean">for </span> each loop can be used to iterate over all elements without using index</p>
+            <div class="code">
+                <textarea class="large" id="python-code25" rows="5" cols="50">
+str1 = "Sam"
+l = [1,2,3,4]
+tup = (True,False)
+
+for character in str1:
+    print(character , end = " ")
+print()
+
+for x in l:
+    print(x , end = " ")
+print()
+
+for y in tup:
+    print(y , end = " ")
+
+                </textarea>
+                <br>
+                <button onclick="runPython('python-code25','output-25')">Run</button>
+                <h4>Output:</h4>
+                <pre class="output" id="output-25"></pre>
+                </div>
+            
         </main>
         
                 <div id="compiler" class="compiler">

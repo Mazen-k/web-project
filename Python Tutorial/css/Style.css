@@ -335,26 +335,25 @@ pre {
 .code .small {
     width: 100%;
     resize:none;
-    background-color: #282c34;
-    color: #ffffff;
+    background-color: #9797ae;
+    color: #FFD43B;
     font-size: 16px;
     width:600px;
     height:100px;
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
     padding: 10px 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 .code .large {
     width: 100%;
     resize:none;
-    background-color: #282c34;
-    color: #ffffff;
+    background-color: #9797ae;
+    color: #FFD43B;
     font-size: 16px;
     width:600px;
     height:200px;
     border-radius: 5px;
-    border: 1px solid #444;
+    border: none;
     padding: 10px 10px;
 }
 
@@ -374,17 +373,15 @@ pre {
 }
 
 .output {
-    background-color: #282c34;
+    background-color: #000000;
     padding: 10px;
-    color: #00ff00;
+    color: #FFD43B;
     border-radius: 5px;
-    border: 1px solid #444;
-    white-space: pre-wrap;
     min-height: 50px;
 }
 
 main h4{
-    color: #306998;
+    color:#FFD43B;
 }
 
 .data-type{
@@ -448,6 +445,9 @@ code{
 .toggle-btn{
     display: none;
 }
+
+
+
 /* styling for course pages ends here */
 
 
@@ -716,8 +716,7 @@ input[type ="submit"]:active{
 /* styling for chapter14 */
 
 .list-functions{
-    width:450px;;
-    
+    width:70% ;
     border-collapse : collapse;
 
 
@@ -761,8 +760,6 @@ input[type ="submit"]:active{
     .nav.visible {
         transform: translateX(0);
     }
-
-
 
     .toggle-btn {
         display: block;

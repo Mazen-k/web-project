@@ -122,7 +122,7 @@
                 </ul>
                 
             </ul>
-            <h2>Elements in a set</h2>
+            <h2><span class = "data-type">set </span>built in functions</h2>
             <table border = "1" class = "list-functions">
                 <thead>
                     <tr>
@@ -132,19 +132,19 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><span class = "data-type">len(set)</span><span class = "data-type"></span></td>
-                        <td>Returns the number of elements in the set.</td>
+                        <td><span class = "data-type">len(</span>set1<span class = "data-type">)</span></td>
+                        <td>Returns the number of elements in the set1.</td>
                     </tr>
                     <tr>
-                        <td><span class = "data-type">add(element)</span><span class = "data-type"></span></td>
-                        <td>Adds an element to the set</td>
+                        <td><span class = "data-type">add(</span>element<span class = "data-type">)</span></td>
+                        <td>Adds an element  to the set</td>
                     </tr>
                     <tr>
-                        <td><span class = "data-type">update(iterable)</span><span class = "data-type"></span></td>
+                        <td><span class = "data-type">update(</span>iterable<span class = "data-type">)</span></td>
                         <td>Adds multiple elements from an iterable to the set</td>
                     </tr>
                     <tr>
-                        <td><span class = "data-type">pop()</span><span class = "data-type"></span></td>
+                        <td><span class = "data-type">pop(</span><span class = "data-type">)</span></td>
                         <td>Removes and return a random element</td>
                     </tr>
                     <tr>
@@ -152,8 +152,8 @@
                         <td>Clears all elements in the set</td>
                     </tr>
                     <tr>
-                        <td><span class = "data-type">remove(element)</span><span class = "data-type"></span></td>
-                        <td>Removes the specified element(Raises a <span class = "data-type">KeyError</span> exception)</td>
+                        <td><span class = "data-type">remove(</span>element<span class = "data-type">)</span></td>
+                        <td>Removes the specified element(Raises a <span class = "data-type">KeyError</span> exception if element is not in the set) </td>
                     </tr>
                     <tr>
                         <td><span class = "data-type">discard()</span><span class = "data-type"></span></td>
@@ -166,161 +166,105 @@
 
 
 
-            <h2><span class="data-type">for</span> loop, <span class="data-type">in</span>, and <span class="data-type">not in</span> operators</h2>
             
-                    <ul class="listing">
-                        <li>A <span class="data-type">for</span> loop can be used to iterate over elements in a set</li>
-                        <li>General format: <span class="data-type">for</span> item <span class="data-type">in</span> set</li>
-                        <li>The loop iterates once for each element in the set</li>
-                        <li>The <span class="data-type">in</span> operator tests whether a value exists in a set</li>
-                        <li>The <span class="data-type">not in</span> operator tests whether a value does not exist in a set</li>
-                    </ul>
                
-           <h2>Title</h2> <table border="1" class="list-functions">
+           <h2><span class = "data-type">set </span> operations</h2> 
+           <table border="1" class="list-functions">
     <thead>
         <tr>
-            <th>Concept</th>
+            <th>Operation</th>
             <th>Description</th>
         </tr>
     </thead>
     <tbody>
         
         <tr>
-            <td>Finding the union of sets</td>
+            <td> set1.<span class="data-type">union</span>(set2)
+            <br> OR
+            <br>
+            set1 <span class="data-type">|</span> set2
+
+        </td>
             <td>
-                <ul class = "listing">
-                    <li><u>Union of two sets</u>: A set that contains all elements of both sets</li>
-                    <li>Use the <span class="data-type">union</span> method: set1.<span class="data-type">union</span>(set2)</li>
-                    <li>Or use the <span class="data-type">|</span> operator: set1 <span class="data-type">|</span> set2</li>
-                    <li>Both techniques return a new set with the union of both sets</li>
-                </ul>
+                Combines all unique element from set1 and set2
             </td>
         </tr>
         <tr>
-            <td>Finding the intersection of sets</td>
-            <td>
-                <ul class = "listing">
-                    <li><u>Intersection of two sets</u>: A set containing elements that exist in both sets</li>
-                    <li>Use the <span class="data-type">intersection</span> method: set1.<span class="data-type">intersection</span>(set2)</li>
-                    <li>Or use the <span class="data-type">&</span> operator: set1 <span class="data-type">&</span> set2</li>
-                    <li>Both techniques return a new set with the intersection of the sets</li>
-                </ul>
+            <td> set1.<span class="data-type">intersection</span>(set2)
+                <br> OR
+                <br>
+                set1 <span class="data-type">&</span> set2
+    
             </td>
+                <td>
+                    Returns elements common between set1 and set2
+                </td>
         </tr>
         <tr>
-            <td>Finding the difference of sets</td>
-            <td>
-                <ul class ="listing">
-                    <li><u>Difference of two sets</u>: A set containing elements in the first set but not the second</li>
-                    <li>Use the <span class="data-type">difference</span> method: set1.<span class="data-type">difference</span>(set2)</li>
-                    <li>Or use the <span class="data-type">-</span> operator: set1 <span class="data-type">-</span> set2</li>
-                    <li>Both techniques return a new set with the difference of the sets</li>
-                </ul>
+            <td> set1.<span class="data-type">difference</span>(set2)
+                <br> OR
+                <br>
+                set1 <span class="data-type">-</span> set2
+    
             </td>
+                <td>
+                    Return elements in set1 but not in set2
+                </td>
         </tr>
         <tr>
-            <td>Finding the symmetric difference of sets</td>
-            <td>
-                <ul class = "listing">
-                    <li><u>Symmetric Difference</u>: A set with elements that are not shared by both sets</li>
-                    <li>Use the <span class="data-type">symmetric_difference</span> method: set1.<span class="data-type">symmetric_difference</span>(set2)</li>
-                    <li>Or use the <span class="data-type">^</span> operator: set1 <span class="data-type">^</span> set2</li>
-                    <li>Both techniques return a new set with the symmetric difference of both sets</li>
-                </ul>
+            <td> set1.<span class="data-type">symmetric_difference</span>(set2)
+                <br> OR
+                <br>
+                set1 <span class="data-type"> ^ </span> set2
+    
             </td>
+                <td>
+                   Returns elements in either set1 or set2 but not in both
+                </td>
         </tr>
         <tr>
-            <td>Finding subsets and supersets</td>
-            <td>
-                <ul class = "listing">
-                    <li><u>Subset</u>: Set A is a subset of Set B if all elements of A exist in B</li>
-                    <li>Use the <span class="data-type">issubset</span> method: setA.<span class="data-type">issubset</span>(setB)</li>
-                    <li>Or use the <span class="data-type">&lt;=</span> operator: setA <span class="data-type">&lt;=</span> setB</li>
-                    <li>Returns <span class="data-type">True</span> if A is a subset of B</li>
-                    <li><u>Superset</u>: Set A is a superset of Set B if A contains all elements of B</li>
-                    <li>Use the <span class="data-type">issuperset</span> method: setA.<span class="data-type">issuperset</span>(setB)</li>
-                    <li>Or use the <span class="data-type">&gt;=</span> operator: setA <span class="data-type">&gt;=</span> setB</li>
-                    <li>Returns <span class="data-type">True</span> if A is a superset of B</li>
-                </ul>
+            <td> set1.<span class="data-type">issubset</span>(set2)
+                <br> OR
+                <br>
+                set1 <span class="data-type"><=</span> set2
+    
             </td>
+                <td>
+                    Checks if all element of set1 are in set2
+                </td>
+        </tr>
+        <tr>
+            <td> set1.<span class="data-type">issuperset</span>(set2)
+                <br> OR
+                <br>
+                set1 <span class="data-type">>=</span> set2
+    
+            </td>
+                <td>
+                    check if all elements of set2 are in set1
+                </td>
         </tr>
     </tbody>
 </table></div>
 
+           <h2> <span class = "data-type">set</span> applications</h2>
+           <p>a set can be used to remove duplicats from a list </p>
             <div class="code">
-                <textarea class="large" id="set-code1" rows="6" cols="50">my_set = {1, 2, 3, 4, 5}
-print("Original set: ", my_set)
-print("Adding 6 to set: ", my_set.add(6))
-print("Removing 3 from set: ", my_set.discard(3))
-print("Updated set: ", my_set)
-                </textarea>
-                <br>
-                <button onclick="runPython('set-code1', 'output1')">Run</button>
-                <h4>Output:</h4>
-                <pre class="output" id="output1"></pre>
-            </div>
-            <h2><span class = "data-type">set </span>operations</h2>
-            <ul class="listing">
-                <li>We can create a <span class="data-type">set</span> using curly braces: my_set = {1, 2, 3}</li>
-                <ul>
-                    <li>Sets are unordered collections of unique elements</li>
-                    <li>Adding elements to a set can be done using the <strong>add()</strong> method</li>
-                    <li>To remove an element, use <strong>discard()</strong> (it won't raise an error if the element isn't found)</li>
-                </ul>
-                <li>We can perform operations like intersection, union, and difference between sets:</li>
-                <ul>
-                    <li><strong>Intersection</strong>: my_set & other_set (returns common elements)</li>
-                    <li><strong>Union</strong>: my_set | other_set (combines all elements)</li>
-                    <li><strong>Difference</strong>: my_set - other_set (returns elements only in my_set)</li>
-                </ul>
-            </ul>
-            
-            <div class="code">
-                <textarea class="large" id="python-code2" rows="5" cols="50">str1 = "Hello World!"
-my_set = set(str1)
-n = len(my_set)
-
-print("my_set gives: ", my_set)
-print("Set size n gives: ", n)
-print("my_set[1 : n] gives: ", list(my_set)[1:n])
-print("my_set[:] gives: ", list(my_set)[:])
-print("my_set[2:n-1] gives: ", list(my_set)[2:n-1])
-print("my_set[1 : n : 2] gives: ", list(my_set)[1:n:2])
-
-                </textarea>
-                <br>
-                <button onclick="runPython('python-code2', 'output2')">Run</button>
-                <h4>Output:</h4>
-                <pre class="output" id="output2"></pre>
-            </div>
-
-            
-            <div class="code">
-                <textarea class="large" id="python-code3" rows="5" cols="50">numbers = [1, 2, 3, 4, 5]
-
-print("Original list: ", numbers)
-print("List sorted in ascending order: ", sorted(numbers))  # Sort the list in ascending order
-print("List sorted in descending order: ", sorted(numbers, reverse=True))  # Sort the list in descending order
-print("Reversed list: ", numbers[::-1])  # Reverse the list
-print("List sum: ", sum(numbers))  # Calculate the sum of the list
-print("List length: ", len(numbers))  # Get the number of elements in the list
-
-numbers.append(6)  # Add element to the list
-print("After appending 6: ", numbers)
-
-numbers.remove(3)  # Remove element from the list
-print("After removing 3: ", numbers)
-
-print("Count of 2 in the list: ", numbers.count(2))  # Count occurrences of 2
-print("Is 4 in the list? ", 4 in numbers)  # Check if 4 is in the list
+                <textarea class="large" id="python-code30" rows="5" cols="50">str1 = "Hello World!"
+numbers = [1, 2, 3, 4, 2, 3, 5, 6, 1, 7]
+unique_numbers = list(set(numbers)) 
+print(unique_numbers)  
                     
 
                 </textarea>
                 <br>
-                <button onclick="runPython('python-code3', 'output3')">Run</button>
+                <button onclick="runPython('python-code30', 'output30')">Run</button>
                 <h4>Output:</h4>
-                <pre class="output" id="output3"></pre>
+                <pre class="output" id="output30"></pre>
             </div>
+
+            
+            
         </main>
         <div id="compiler" class="compiler">
             <iframe class="iframe" src="https://trinket.io/embed/python3" class = "compiler1"></iframe>

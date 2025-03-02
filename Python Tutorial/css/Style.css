@@ -716,7 +716,8 @@ input[type ="submit"]:active{
 /* styling for chapter14 */
 
 .list-functions{
-    width:70% ;
+    width:450px;;
+    
     border-collapse : collapse;
 
 

@@ -731,3 +731,51 @@ input[type ="submit"]:active{
 }
 /* styling for chapter14 ends here */
 
+/* media queries */
+@media (max-width: 768px) {
+    .compiler {
+        display: none;
+    }
+
+    .nav {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background: #3776AB;
+        color: white;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(0); 
+        z-index: 1000;
+    }
+
+    main {
+        display: none;
+    }
+
+    .nav.hidden {
+        transform: translateX(-100%);
+    }
+
+    main.visible {
+        display: block;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    #course-foot{
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    .toggle-btn {
+        font-size: large;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: #3776AB;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 1100;
+    }
+}

@@ -344,6 +344,7 @@ pre {
     border: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 10px 10px;
+    pointer-events: none;
 }
 .code .large {
     width: 100%;
@@ -357,6 +358,7 @@ pre {
     border: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 10px 10px;
+    pointer-events: none;
 }
 
 .code button {
@@ -720,7 +722,7 @@ input[type ="submit"]:active{
 /* styling for chapter14 */
 
 .list-functions{
-    width:70% ;
+    width:450px;
     border-collapse : collapse;
 
 

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="../css/Style.css">
+    <script defer src="../javascript/Script.js"></script>
+</head>
+<body class="form-body">
+    <nav>
+        <H1>Learn.Py</H1>
+        <ul>
+            <li onclick="window.location.href='index.html'">Home</li>
+            <li onclick="window.location.href='info.html'">Info</li>
+            <li onclick="window.location.href='compiler.html'">Compiler</li>
+            <li><button id="login"><a href="login.html">login</a></button></li>
+        </ul>
+        </nav>
+    <div id ="big-div">
+        <h2>
+            Sign up
+        </h2>
+        <form action = "">
+            <input type = "hidden" name = "reciepient" value ="">
+            <input type = "hidden" name= "subject" value = "">
+            <input type = "hidden" name = "redirect" value = "signup.html">
+            <div id="creds">
+            <input type = "text" id = "first"
+            placeholder="First Name" class="names" required>
+            <input type="text" id="last"
+            placeholder="Last Name" class="names" required >
+            </div>
+            <input type="text" id="emls"
+            placeholder="Email" class="texts" required>
+            
+            <input type="password" id = "password"
+            placeholder="Password" class="texts" required>
+            <input type = "password" id = "Verify Password"
+            placeholder="Confirm Password" class="texts" required>
+            <div id="checkbox-container">
+                <input type="checkbox" id="terms" required> 
+                <label for="terms">Agree to <a href="" class="link" onclick="openPopup()">terms and conditions</a></label>
+            </div>
+            <input type="submit" class="texts" value = Register><p>
+        
+                already have an account? <a onclick="window.location.href='login.html'" class="link">login</a>
+               </p>
+            <p id="error-message"></p>
+             
+
+            
+    </div>
+    
+    <div id ="overlay" onclick="closePopup()"></div>
+    <div id="popup">
+        <button class="close-btn" onclick="closePopup()">x</button>
+        <h2>Terms & Conditions</h2>
+        
+        <p>By accessing and using <strong>Learn.py</strong>, you agree to comply with the following terms and conditions. If you do not agree with any part of these terms, please discontinue use of the website immediately.</p>
+      
+        <h3>1. Educational Purpose Only</h3>
+        <p><strong>Learn.py</strong> is an educational platform for learning Python programming. The content provided, including tutorials, examples, and exercises, is for informational purposes only and should not be considered professional or official advice.</p>
+      
+        <h3>2. User Eligibility</h3>
+        <p>To use <strong>Learn.py</strong>, you must be at least <strong>13 years old</strong>. If you are under 18, you may only use the platform with parental or guardian permission.</p>
+      
+        <h3>3. Intellectual Property Rights</h3>
+        <ul>
+          <li>All text, code snippets, images, and other content on <strong>Learn.py</strong> are protected by copyright and intellectual property laws.</li>
+          <li>You <strong>may</strong> use and modify the code examples for personal learning.</li>
+          <li>You <strong>may not</strong> redistribute, copy, or sell any content without permission.</li>
+          <li>Plagiarism or unauthorized sharing of premium content is strictly prohibited.</li>
+        </ul>
+      
+        <h3>4. User Conduct</h3>
+        <ul>
+          <li><strong>Engage respectfully</strong> with the community and instructors.</li>
+          <li><strong>Do not misuse the platform</strong>, including attempting to hack, spam, or distribute malicious code.</li>
+          <li><strong>Do not violate any laws</strong> related to software development, including unethical coding practices.</li>
+        </ul>
+      
+        <h3>5. Accuracy & Liability Disclaimer</h3>
+        <p>While we strive to provide accurate and up-to-date information, <strong>Learn.py</strong> does not guarantee that all content is error-free.</p>
+        <ul>
+          <li>We are <strong>not responsible</strong> for coding errors, outdated materials, or misunderstandings.</li>
+          <li>You use the information at your own risk.</li>
+        </ul>
+      
+        <h3>6. External Links & Third-Party Resources</h3>
+        <p>Some tutorials may include references to external websites or libraries. <strong>Learn.py</strong> is not responsible for third-party content, privacy policies, or security practices.</p>
+      
+        <h3>7. Updates to Terms</h3>
+        <p>We may update these terms at any time without prior notice. Continued use of <strong>Learn.py</strong> signifies your acceptance of any changes.</p>
+      
+        <h3>8. Privacy Policy</h3>
+        <p>By using <strong>Learn.py</strong>, you also agree to our <strong>Privacy Policy</strong>, which explains how we handle your data. We <strong>do not</strong> sell user data but may collect basic analytics for platform improvements.</p>
+        
+        
+      </div>
+      
+    </div>
+    <footer id="home-foot">
+        <p>&COPY;Learn.py 2025 | All Rights Reserved.</p> 
+    </footer>
+    
+</body>
+</html>

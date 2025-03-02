@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="../css/Style.css">
+    <script defer src="../javascript/Script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+</head>
+<body class="form-body">
+    <nav>
+        <H1>Learn.Py</H1>
+        <ul>
+            <li onclick="window.location.href='index.html'">Home</li>
+            <li onclick="window.location.href='info.html'">Info</li>
+            <li onclick="window.location.href='compiler.html'">Compiler</li>
+            
+        </ul>
+        </nav>
+
+    <div id="big-div">
+        <h2>
+            Login
+        </h2>
+        <form action="">
+        <input type = "hidden" name = "reciepient" value ="">
+        <input type = "hidden" name= "subject" value = "">
+        <input type = "hidden" name = "redirect" value = "signup.html">
+        <input type = "text" id = "username" placeholder="Username" class="texts" required>
+        <input type = "password" id = "password" placeholder="Password" class="texts" required >
+        
+        
+        
+        <input type="submit" value="Login" class="texts">
+       <p>
+        
+        Dont have an account? <a onclick="window.location.href='signup.html'" class="link">Sign up</a>
+       </p> 
+        <p id="error-message"></p></form>
+    </div>
+    <footer id="home-foot">
+        <p>&COPY;Learn.py 2025 | All Rights Reserved.</p> 
+    </footer>
+    
+</body>
+</html>

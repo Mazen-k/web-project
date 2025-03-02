@@ -1,0 +1,793 @@
+/* general styling for all pages */
+*{
+    font-family: "IBM Plex Sans", serif;
+
+}
+
+p{
+    cursor: default;
+}
+
+
+/* styling for home page begins here */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #3776ab;
+    width: 100%;
+    height: 75px;
+    padding: 0 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 0px 7px #5d5d5d;
+}
+
+nav h1 {
+    position: sticky;
+    left: 50px;
+    color: #ffffff;
+    font-size: 24px;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 30px;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+    color: #ffffff;
+    padding: 10px;
+}
+
+nav ul li:hover{
+    cursor: default;
+    color: #8f8f8f;
+}
+
+#login{
+    background-color: #FFD43B;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+#login a{
+    text-decoration: none;
+    color: #000000;
+    font-weight: 475;
+}
+
+#login:active{
+    background-color: #ecbe19;
+}
+
+#home-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 55px;
+    width: 100%;
+    height: 100vh;
+    margin-bottom: 0px;
+    flex-direction: column;
+
+}
+.course-card {
+    border-left: 5px solid #ffc107;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.course-card:hover {
+    transform: scale(1.05);
+}
+
+
+.coming-soon-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000b3;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.course-card.coming-soon:hover .coming-soon-overlay {
+    opacity: 1;
+}
+
+
+#courses {
+    max-height: 500px;
+    padding: 20px;
+}
+
+
+#home-foot{
+    position: fixed;
+    bottom: 0px;
+    background-color: #306998;
+    height: 40px;
+    width: 100vw;
+    left: 0px;
+    margin: 0;
+    display: flex;
+    align-content: baseline;
+    justify-content: center;
+
+}
+
+#home-foot p{
+    padding-top: 0px;
+    opacity: 0.8;
+}
+
+/* styling for home page ends here */
+
+/* styling for course pages starts here */
+
+.body{
+    display: grid;
+    grid-template-columns: 300px 800px 300px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    gap: 15px;
+}
+
+
+.nav{
+    z-index: 2;
+    grid-column-start: 1;
+    grid-column-end:2 ;
+    background-color: #3776AB;
+    position : fixed ;
+    Width : 240px;
+    height :100vh;
+    padding: 20px ;
+    font-size :24px;
+    left:0;
+    top:0 ;
+    box-shadow: 5px 0 10px #0000004d;
+}
+
+/* this is our edit of the default h1 properties extracted from google's devtools inspect tool. */
+:-webkit-any(article, aside, nav, section) h1 {
+    font-size: 1.5em;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+
+
+.nav ul{
+    list-style-type: none;
+    padding :0 ;
+    margin : 0 ;
+}
+
+.nav h1{
+    position: sticky;
+    display: flex;
+    top: 15px;
+    margin-bottom :25px ;
+    color : #ffffff ;
+}
+
+h1:hover{
+    cursor: pointer;
+}
+
+.nav .course-title{
+    margin-bottom :25px ;
+    color : #ffffff ;
+}
+
+.nav li {
+    display: block;
+    color:#ffffff ;
+}
+
+.chapters li{
+    margin-bottom: none ;
+}
+
+.chapters li a{
+    color:#ffffff;
+    text-decoration: none;
+    transition : 0.6s ;
+    display : block ;
+    border-radius: 3px;
+    padding :20px;
+    padding-left: 5px;
+}
+
+.chapters li a:hover{
+    background: #FFD43B;
+    color : #000000 ;
+}
+
+.section li a{
+    color: #ffffff ;
+    text-decoration: none;
+    font-size: 20px;
+    padding:10px;
+    padding-left: 10px;
+    display:block ;
+}
+
+.section{
+   display: none ;
+   color: #ddd;
+   padding-left: 10px;
+}
+
+main{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin-left :15px;
+    padding-bottom: 30px;
+    flex-grow:1 ;
+    margin-bottom: 60px;
+    z-index: 0;
+    min-height: 100vh;
+    padding-right: 30px;
+
+}
+main h1 {
+    color: #306998;
+    margin-bottom: 10px;
+}
+
+main h3 {
+    color: #000000;
+    margin-top: 20px;
+}
+
+main p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+
+main ul {
+    padding-left: 20px;
+}
+.indent{
+    tab-size : 4;
+}
+
+.listing{
+    font-size: 18px;
+    
+}
+.listing li::marker{
+    color:#306998 ;
+}
+
+.operator{
+    color: #00a4a4;
+}
+.boolean{
+    color: blue;
+}
+
+.truth-table{
+    width :300px;
+    content: center;
+    text-align:center;
+    border:2px #000000;
+    border-collapse: collapse;
+}
+
+.truth-table td{
+    color:#0000ff;
+}
+
+.order-of-precedance{
+    width :420px;
+    content: center;
+    text-align:center;
+    border:2px #000000;
+    border-collapse: collapse;
+}
+
+.reserved-words{
+    width :420px;
+    content: center;
+    text-align:center;
+    border:2px #000000;
+    border-collapse: collapse;
+}
+
+pre {
+    background-color: #2b2b2b;
+    color: #FFD43B;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 16px;
+}
+
+.code {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 12px;
+    width: 50%;
+    color: #ffffff;
+}
+
+.code .small {
+    width: 100%;
+    resize:none;
+    background-color: #282c34;
+    color: #ffffff;
+    font-size: 16px;
+    width:600px;
+    height:100px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px 10px;
+    pointer-events: none;
+}
+.code .large {
+    width: 100%;
+    resize:none;
+    background-color: #282c34;
+    color: #ffffff;
+    font-size: 16px;
+    width:600px;
+    height:200px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px 10px;
+    pointer-events: none;
+}
+
+.code button {
+    color: #306998;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #FFD43B;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: none;
+}
+
+.code button:active {
+    background-color: #c59b02;
+}
+
+.output {
+    background-color: #282c34;
+    padding: 10px;
+    color: #FFD43B;
+    border-radius: 5px;
+    border: 1px solid #444;
+    white-space: pre-wrap;
+    min-height: 50px;
+}
+
+main h4{
+    color: #306998;
+}
+
+.data-type{
+    color : #b818b8
+}
+
+.data-types{
+    color :#000000 ;
+}
+
+
+#course-foot{
+    display: flex;
+    position: sticky;
+    height: 40px;
+    width: 100vw;
+    bottom: 0px;
+    top: 100vh;
+    left: 0;
+    background: #306998;
+    color: #000000;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 0px;
+    align-content: center;
+    justify-content: center;
+    margin-top: 15px;
+    justify-self: end;
+    z-index: 1;
+}
+
+#course-foot p{
+    opacity: 0.8;
+}
+
+.course-title:hover{
+    cursor: pointer;
+}
+
+code{
+    color: #000000;
+}
+
+.compiler{
+    position: fixed;
+    justify-content: end;
+    grid-column-start: 3;
+    right: 0;
+    top: 0;
+    z-index: 0;
+    /* border-left: 5px solid black; */
+    box-shadow: -4px 0px 10px 3px grey;
+}
+
+.iframe{
+    justify-self: end;
+    height: 100vh;
+    width: 400px;
+    z-index: 4;
+}
+.toggle-btn{
+    display: none;
+}
+
+
+
+/* styling for course pages ends here */
+
+
+
+/* styling for compiler page starts here */
+
+#compiler-body{
+    margin: 0;
+    padding: 0;
+}
+
+.compile{
+    height: calc(100vh - 79px);
+    width: calc(100vw - 8px);
+    position: fixed;
+    bottom: 0;
+}
+/* styling for compiler page ends here */
+
+
+
+/* styling for signup and login begins here */
+
+.form-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:0%;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+#big-div{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    background-color: #f0f8ff;
+    padding: 30px;
+    border-radius: 9px;
+    box-shadow: 5px 5px 15px #0000004d;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.texts {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border-left: 3px solid #FFD43B ;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color:#FFD43B;
+    color: #545454;
+    cursor: pointer;
+    border: none;
+}
+
+input[type ="submit"]:active{
+    background-color: #d4b100;
+}
+
+#error-message{
+    color: #ff0000;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+#checkbox-container {
+    margin: 8px 0px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-direction: row;
+    border-radius: 0;
+}
+
+.names{
+    padding: 5px;
+    border-radius: 5px;
+    height:30px ;
+    width: 120px;
+    margin-top: 5px;
+    margin: 5px 5.5px 0px 4.5px;
+    border-left: 3px solid #FFD43B ;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+#creds{
+    align-self: self-start;
+    display: flex;
+    flex-direction: row;
+}
+
+.link{
+    color: #0000ff;
+    text-decoration: none;
+}
+
+.link:hover{
+    color: #4848ff;
+    cursor: pointer;
+}
+
+#popup{
+    display: none;
+    position: fixed;
+    top: 50%;
+    height: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    z-index: 0;
+    overflow: auto;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(220, 219, 219);
+    z-index: -1;
+}
+
+.close-btn {
+    background: white;
+    color: black;
+    font-size:large;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    float: right;
+    border-radius: 5px;
+}
+
+.close-btn:hover {
+    background: darkred;
+}
+
+#popup{
+    display: none;
+    position: fixed;
+    top: 50%;
+    height: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    z-index: 0;
+    overflow: auto;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(220, 219, 219);
+    z-index: -1;
+}
+
+.close-btn {
+    background: white;
+    color: black;
+    font-size:large;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    float: right;
+    border-radius: 5px;
+}
+
+.close-btn:hover {
+    background: darkred;
+}
+
+/* styling for login and sign up ends here */
+
+
+/* styling for info page starts here */
+#info-div{
+    display: flex;
+    padding: 10px 10px 20px;
+    margin-top: 75px;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub-div {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 30px;
+    align-content: space-between;
+}
+
+#intro{
+    max-width: 65vw;
+}
+.small-div {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 15px 15px 7px;
+    padding: 10px;
+    width: 25vw;
+    border-top: 1px solid #cbcbcb;;
+    border-left: 4px solid #ecbe19;
+    border-right: 1px solid #cbcbcb;;
+    border-bottom: 1px solid #cbcbcb;
+    border-radius: 7px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.small-div:hover{
+    transform: scale(1.0375);
+}
+
+#naming{
+    text-decoration: none;
+    color:#306998;
+}
+
+#naming:hover{
+    color: #6498c3;
+}
+
+
+/* styling for info page ends here */
+
+/* styling for chapter14 */
+
+.list-functions{
+    width:450px;
+    border-collapse : collapse;
+
+
+}
+.list-functions thead{
+    background-color:#306998;
+
+}
+.list-functions thead th{
+    color:White;
+}
+.list-functions tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+.list-functions td {
+    padding: 10px;
+    color: #333;
+}
+/* styling for chapter14 ends here */
+
+/* media queries */
+@media (max-width: 770px) {
+    .body {
+        display: block;
+    }
+    .compiler {
+        display: none;
+    }
+
+    .nav {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background: #3776AB;
+        color: white;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(-100%);
+        z-index: 1000;
+    }
+
+    .nav.visible {
+        transform: translateX(0);
+    }
+
+    .toggle-btn {
+        display: block;
+        font-size: large;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: #3776AB;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 1100;
+    }
+}
+
+
+@media (max-width: 1000px) {
+    #compiler{
+        display: none;
+    }
+
+
+
+}

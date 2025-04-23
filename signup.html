@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up</title>
-    <link rel="stylesheet" href="../css/Style.css">
-    <script defer src="../javascript/Script.js"></script>
+    <link rel="stylesheet" href="css/Style.css">
+    <script defer src="javascript/Script.js"></script>
 </head>
 <body class="form-body">
     <nav>
@@ -22,20 +22,19 @@
         <h2>
             Sign up
         </h2>
-        <form action = "">
-            <input type = "hidden" name = "reciepient" value ="">
-            <input type = "hidden" name= "subject" value = "">
-            <input type = "hidden" name = "redirect" value = "signup.html">
+        <form id="signupForm" action="php/register.php" method="post">
+
+            
             <div id="creds">
-            <input type = "text" id = "first"
+            <input name="first"  id="first" type = "text" 
             placeholder="First Name" class="names" required>
-            <input type="text" id="last"
+            <input name="last"   id="last" type="text" 
             placeholder="Last Name" class="names" required >
             </div>
-            <input type="text" id="emls"
+            <input type="text" name="email" id="emls"
             placeholder="Email" class="texts" required>
             
-            <input type="password" id = "password"
+            <input type="password" name="password" id = "password"
             placeholder="Password" class="texts" required>
             <input type = "password" id = "Verify Password"
             placeholder="Confirm Password" class="texts" required>
@@ -104,6 +103,7 @@
     <footer id="home-foot">
         <p>&COPY;Learn.py 2025 | All Rights Reserved.</p> 
     </footer>
-    
+
 </body>
+
 </html>

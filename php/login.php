@@ -6,7 +6,7 @@ require_once 'db.php';          // provides  $conn  (MySQLi)
 
 /* ─── 1. Basic validation ─────────────────────────────────────────────── */
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: ../login.html');
+    header('Location: ../loginpage.php');
     exit();
 }
 
@@ -16,7 +16,7 @@ $redirect =       $_POST['redirect']?? '../index.html';
 
 if ($email === '' || $password === '') {
     // front-end can handle this token and show “missing fields”
-    echo 'missing_fields';
+    header("Location: ../loginpage.php?error=missing_fields");
     exit();
 }
 
@@ -29,7 +29,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows === 0) {
-    echo 'no_account';          // “No account with that email”
+    header("Location: ../loginpage.php?error=no account with that email");        // “No account with that email”
     exit();
 }
 
@@ -37,7 +37,7 @@ $user = $result->fetch_assoc();
 
 /* ─── 3. Check the password hash ──────────────────────────────────────── */
 if (!password_verify($password, $user['Password'])) {
-    echo 'wrong_password';
+    header("Location: ../loginpage.php?error=wrong password");         // “Wrong password”
     exit();
 }
 

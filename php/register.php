@@ -14,10 +14,10 @@ $pass   =        $_POST['password'] ?? '';
 
 /* ------------- server‑side sanity checks ------------- */
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    http_response_code(400);  echo 'Invalid e‑mail.';  exit;
+    header("Location: ../signuppage.php?error=invalid email") ;  exit;
 }
 if (strlen($pass) < 8 || !preg_match('/\d/', $pass)) {
-    http_response_code(400);  echo 'Password too weak.';  exit;
+    header("Location: ../signuppage.php?error=password too weak");  exit;
 }
 
 /* ------------- unique e‑mail? ------------- */
@@ -25,7 +25,7 @@ $stmt = $conn->prepare('SELECT Id FROM users WHERE Email = ?');
 $stmt->bind_param('s', $email);
 $stmt->execute();  $stmt->store_result();
 if ($stmt->num_rows) {                      // already registered
-    http_response_code(409);  echo 'E‑mail already taken.';  exit;
+    header("Location: ../signuppage.php?error=email already taken");  exit;
 }
 $stmt->close();
 

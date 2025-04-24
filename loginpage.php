@@ -30,12 +30,17 @@
         <input type = "text" id = "email" placeholder="Email" name="email" class="texts" required>
         <input type = "password" id = "password" placeholder="Password" name="password" class="texts" required >
         
-        
+        <?php if (isset($_GET['error'])): ?>
+    <p style="color:red;"><?php echo htmlspecialchars($_GET['error']); ?></p>
+  <?php endif; ?>
         
         <input type="submit" value="Login" class="texts">
+        
+        </form>
+
        <p>
         
-        Dont have an account? <a onclick="window.location.href='signup.html'" class="link">Sign up</a>
+        Dont have an account? <a onclick="window.location.href='signuppage.php'" class="link">Sign up</a>
        </p> 
         <p id="error-message"></p></form>
     </div>

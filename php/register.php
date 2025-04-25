@@ -14,10 +14,16 @@ $pass   =        $_POST['password'] ?? '';
 
 /* ------------- server‑side sanity checks ------------- */
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    header("Location: ../signup.html?error=invalid email") ;  exit;
+    echo json_encode([
+        'status'  => 'error',
+        'message' => 'Invalid e-mail address'
+    ]); ;  exit;
 }
 if (strlen($pass) < 8 || !preg_match('/\d/', $pass)) {
-    header("Location: ../signup.html?error=password too weak");  exit;
+   echo json_encode([
+        'status'  => 'error',
+        'message' => 'password must be at least 8 characters long and contain at least one number'
+    ]);  exit;
 }
 
 /* ------------- unique e‑mail? ------------- */
@@ -25,7 +31,10 @@ $stmt = $conn->prepare('SELECT Id FROM users WHERE Email = ?');
 $stmt->bind_param('s', $email);
 $stmt->execute();  $stmt->store_result();
 if ($stmt->num_rows) {                      // already registered
-    header("Location: ../signup.html?error=email already taken");  exit;
+    echo json_encode([
+        'status'  => 'error',
+        'message' => 'Email already in use'
+    ]); exit;
 }
 $stmt->close();
 

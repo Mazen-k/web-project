@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up</title>
     <link rel="stylesheet" href="css/Style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
     <script defer src="javascript/Script.js"></script>
 </head>
 <body class="form-body">
@@ -53,6 +55,44 @@
 
             
     </div>
+    <script>
+        let emailInUse = false;  // global flag to track email status
+      
+        $(function () {
+          $('#emls').on('blur', function () {
+            const email = $.trim(this.value);
+            const $msg = $('#error-message');
+      
+            if (email === '') return;
+      
+            $.ajax({
+              url: 'php/check_email.php',
+              type: 'POST',
+              data: { email },
+              dataType: 'json',
+              success({ in_use, error }) {
+    if (error) {
+        $msg.text(error).css('color', 'red');
+        emailInUse = true;
+        $('input[type="submit"]').prop('disabled', true); // 🔒 disable
+    } else if (in_use) {
+        $msg.text('That e-mail address is already registered').css('color', 'red');
+        emailInUse = true;
+        $('input[type="submit"]').prop('disabled', true); // 🔒 disable
+    } else {
+        $msg.text('');
+        emailInUse = false;
+        $('input[type="submit"]').prop('disabled', false); // 🔓 enable
+    }
+    },
+              error() {
+                console.warn('Could not verify e-mail');
+              }
+            });
+          });
+        });
+      </script>
+      
     
     <div id ="overlay" onclick="closePopup()"></div>
     <div id="popup">

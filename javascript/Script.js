@@ -94,6 +94,47 @@ function toggleSidebar() {
 }
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('signupForm');
+    const msg  = document.getElementById('error-message');
+  
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();                 // no full-page refresh
+      msg.textContent = '';               // clear previous message
+      
+      if (typeof emailInUse !== 'undefined' && emailInUse) {
+        msg.textContent = 'Fix errors before submitting';
+        return;
+      }
+  
+      try {
+        const res  = await fetch(form.action, {  // php/register.php
+          method: 'POST',
+          body  : new FormData(form)             // sends all fields
+        });
+  
+        // network-level failure?
+        if (!res.ok) throw new Error('Request failed');
+  
+        const data = await res.json();           // expects JSON back
+        /* Example JSON from register.php:
+           { "status":"error", "message":"E-mail already in use" }
+           { "status":"success", "redirect":"../index.html"      }
+        */
+  
+        if (data.status === 'success') {
+          // go wherever PHP told us, or fall back to home
+          window.location.href = data.redirect || '../index.html';
+        } else {
+          msg.textContent = data.message || 'Registration failed';
+        }
+      } catch (err) {
+        msg.textContent = 'Network error – please try again';
+        console.error(err);
+      }
+    });
+  });
+
 
 
 

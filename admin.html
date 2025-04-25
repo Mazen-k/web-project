@@ -44,12 +44,12 @@
   <div id="big-div" class="admin-card">
     <h2>Add a new Quiz Question</h2>
 
-    <div class="row" id="quizbox">
-      <textarea name="question" rows="3" placeholder="Question text…" required></textarea>
+    <div  >
+      <textarea name="question" id="quizbox"  placeholder="Question text…" required></textarea>
     </div>
 
     <!-- Row 3: options side-by-side -->
-    <div class="row">
+    <div id="row">
       <input name="op1" type="text" placeholder="Option 1" id="quiz" required>
       <input name="op2" type="text" placeholder="Option 2" id="quiz" required>
       <input name="op3" type="text" placeholder="Option 3" id="quiz" required>
@@ -59,7 +59,7 @@
 
     <form id="qForm">
       <!-- Row 1: quiz number + correct answer -->
-      <div class="row">
+      <div id="row">
         <label>Quiz&nbsp;#
           <select name="quiz" id ="quiz" required>
             <option value="0">0</option><option value="1">1</option><option value="2">2</option>
@@ -74,7 +74,7 @@
       <!-- Row 2: question text -->
      
       <!-- Row 4: action -->
-      <div class="row">
+      <div id="row">
         <button type="submit" class="save">Save question</button>
         <span id="msg" style="color:red;"></span>
       </div>

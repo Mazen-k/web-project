@@ -10,15 +10,16 @@
     <link rel="stylesheet" href="css/Style.css">
 </head>
 <body id="compiler-body">
-    <nav>
-        <H1>Learn.Py</H1>
-        <ul>
-            <li onclick="window.location.href='index.html'">Home</li>
-            <li onclick="window.location.href='Info.html'">Info</li>
-            <li onclick="window.location.href='Compiler.html'">Compiler</li>
-            <li><button id="login"><a id="loginlink" href="login.html">login</a></button></li>
-        </ul>
-        </nav >
+  <nav>
+    <H1>Learn.Py</H1>
+    <ul>
+        <li onclick="window.location.href='index.html'">Home</li>
+        <li onclick="window.location.href='Info.html'">Info</li>
+        <li onclick="window.location.href='Compiler.html'">Compiler</li>
+        <li onclick="location='admin.html'">Admin</li>
+        <li><button id="login"><a id="loginlink" href="login.html">login</a></button></li>
+    </ul>
+    </nav >
         <script>
             $(function () {
               $.getJSON('php/check_session.php', data => {

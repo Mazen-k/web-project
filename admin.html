@@ -25,6 +25,7 @@
         <li><button id="login"><a id="loginlink" href="login.html">login</a></button></li>
     </ul>
     </nav >
+    </nav >
     <script>
         $(function () {
           $.getJSON('php/check_session.php', data => {
@@ -94,7 +95,7 @@
         msg.style.color='green'; msg.textContent='✔ Saved (id '+data.id+')';
         form.reset();
       }else{ msg.style.color='red'; msg.textContent=data.error||'Error'; }
-    }catch{ msg.style.color='red'; msg.textContent='Network error'; }
+    }catch{ msg.style.color='red'; msg.textContent='Acces Restyricted! Admins Only'; }
   });
   </script>
 </body>

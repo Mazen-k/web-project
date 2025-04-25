@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin – Add Quiz Question</title>
+
+  <!-- reuse site styles -->
+  <link rel="stylesheet" href="css/Style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+  <!-- page-specific flex tweaks -->
+  <style>
+    .admin-card      {display:flex;flex-direction:column;gap:14px;max-width:1000px;}
+    .row             {display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+    .row textarea    {flex:1 1 600px;}
+    .row input[type=text]{flex:1 1 220px;}
+    .row input[type=number]{width:80px;}
+    .row select      {width:80px;}
+    button.save      {background:#FFD43B;border:none;padding:10px 22px;border-radius:6px;cursor:pointer;}
+  </style>
+</head>
+
+<body class="form-body">
+  <!-- NAV -->
+  <nav>
+    <H1>Learn.Py</H1>
+    <ul>
+        <li onclick="window.location.href='index.html'">Home</li>
+        <li onclick="window.location.href='Info.html'">Info</li>
+        <li onclick="window.location.href='Compiler.html'">Compiler</li>
+        <li onclick="location='admin.html'">Admin</li>
+        <li><button id="login"><a id="loginlink" href="login.html">login</a></button></li>
+    </ul>
+    </nav >
+
+  <!-- CONTENT -->
+  <div id="big-div" class="admin-card">
+    <h2>Add a new Quiz Question</h2>
+
+    <form id="qForm">
+      <!-- Row 1: quiz number + correct answer -->
+      <div class="row">
+        <label>Quiz&nbsp;#
+          <select name="quiz">
+            <option value="0">0</option><option value="1">1</option><option value="2">2</option>
+          </select>
+        </label>
+
+        <label>Correct&nbsp;(1-4)
+          <input type="number" name="answer" min="1" max="4" required>
+        </label>
+      </div>
+
+      <!-- Row 2: question text -->
+      <div class="row">
+        <textarea name="question" rows="3" placeholder="Question text…" required></textarea>
+      </div>
+
+      <!-- Row 3: options side-by-side -->
+      <div class="row">
+        <input name="op1" type="text" placeholder="Option 1" required>
+        <input name="op2" type="text" placeholder="Option 2" required>
+        <input name="op3" type="text" placeholder="Option 3" required>
+        <input name="op4" type="text" placeholder="Option 4" required>
+      </div>
+
+      <!-- Row 4: action -->
+      <div class="row">
+        <button type="submit" class="save">Save question</button>
+        <span id="msg" style="color:red;"></span>
+      </div>
+    </form>
+  </div>
+
+  <footer id="home-foot"><p>&COPY;Learn.py&nbsp;2025&nbsp;| All Rights Reserved.</p></footer>
+
+  <script>
+  /* AJAX save */
+  const form=document.getElementById('qForm'), msg=document.getElementById('msg');
+  form.addEventListener('submit', async e=>{
+    e.preventDefault(); msg.style.color='grey'; msg.textContent='Saving…';
+    try{
+      const res = await fetch('php/add_question.php', {method:'POST', body:new FormData(form)});
+      const data= await res.json();
+      if(data.ok){
+        msg.style.color='green'; msg.textContent='✔ Saved (id '+data.id+')';
+        form.reset();
+      }else{ msg.style.color='red'; msg.textContent=data.error||'Error'; }
+    }catch{ msg.style.color='red'; msg.textContent='Network error'; }
+  });
+  </script>
+</body>
+</html>

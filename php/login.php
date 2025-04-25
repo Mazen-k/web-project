@@ -1,54 +1,69 @@
 <?php
-/* login.php  – process the form at /php/login.php */
-
+/* --------------------------------------------------------------------------
+   LOGIN END-POINT  (expects: POST email, POST password)
+   -------------------------------------------------------------------------- */
 session_start();
-require_once 'db.php';          // provides  $conn  (MySQLi)
+header('Content-Type: application/json');          // always answer JSON
 
-/* ─── 1. Basic validation ─────────────────────────────────────────────── */
+require_once __DIR__ . '/db.php';           //  ➜ $conn  (mysqli)
+
+/* ─── 1. Basic request sanity ──────────────────────────────────────────── */
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: ../loginpage.php');
-    exit();
+    http_response_code(405);                       // Method Not Allowed
+    echo json_encode([
+        'status'  => 'error',
+        'message' => 'POST request required'
+    ]);
+    exit;
 }
 
+/* ─── 2. Grab and validate input ───────────────────────────────────────── */
 $email    = trim($_POST['email']    ?? '');
 $password =       $_POST['password']?? '';
-$redirect =       $_POST['redirect']?? '../index.html';
 
-if ($email === '' || $password === '') {
-    // front-end can handle this token and show “missing fields”
-    header("Location: ../loginpage.php?error=missing_fields");
-    exit();
+if (!filter_var($email, FILTER_VALIDATE_EMAIL) || $password === '') {
+    echo json_encode([
+        'status'  => 'error',
+        'message' => 'Invalid e-mail or password'
+    ]);
+    exit;
 }
 
-/* ─── 2. Look up the user by email ────────────────────────────────────── */
+/* ─── 3. Look up user ──────────────────────────────────────────────────── */
 $stmt = $conn->prepare(
-    "SELECT Id, FirstName, Is_admin, Password FROM users WHERE Email = ? LIMIT 1"
+    'SELECT id, email, password FROM users WHERE email = ? LIMIT 1'
 );
 $stmt->bind_param('s', $email);
 $stmt->execute();
 $result = $stmt->get_result();
 
-if ($result->num_rows === 0) {
-    header("Location: ../loginpage.php?error=no account with that email");        // “No account with that email”
-    exit();
+if ($result->num_rows !== 1) {
+    echo json_encode([
+        'status'  => 'error',
+        'message' => 'Invalid e-mail or password'
+    ]);
+    exit;
 }
 
 $user = $result->fetch_assoc();
 
-/* ─── 3. Check the password hash ──────────────────────────────────────── */
-if (!password_verify($password, $user['Password'])) {
-    header("Location: ../loginpage.php?error=wrong password");         // “Wrong password”
-    exit();
+/* ─── 4. Verify password hash ──────────────────────────────────────────── */
+if (!password_verify($password, $user['password'])) {
+    echo json_encode([
+        'status'  => 'error',
+        'message' => 'Invalid e-mail or password'
+    ]);
+    exit;
 }
 
-/* ─── 4. Success → set session & redirect ─────────────────────────────── */
-$_SESSION['user_id']    = $user['Id'];
-$_SESSION['first_name'] = $user['FirstName'];
-$_SESSION['is_admin']   = (bool)$user['Is_admin'];
+/* ─── 5. Success → prime session & answer JSON ─────────────────────────── */
+$_SESSION['loggedin'] = true;
+$_SESSION['id']       = $user['id'];
+$_SESSION['email']    = $user['email'];
 
-// regenerate the session ID to prevent fixation attacks
-session_regenerate_id(true);
-
-header("Location: $redirect");
-exit();
+$redirect = $_POST['redirect'] ?? '/web-project/index.html'; // Corrected path
+echo json_encode([
+    'status'   => 'success',
+    'redirect' => $redirect
+]);
 ?>

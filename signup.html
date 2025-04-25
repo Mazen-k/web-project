@@ -15,7 +15,7 @@
             <li onclick="window.location.href='index.html'">Home</li>
             <li onclick="window.location.href='info.html'">Info</li>
             <li onclick="window.location.href='compiler.html'">Compiler</li>
-            <li><button id="login"><a href="loginpage.php">login</a></button></li>
+            <li><button id="login"><a href="login.html">login</a></button></li>
         </ul>
         </nav>
     <div id ="big-div">
@@ -42,13 +42,11 @@
                 <input type="checkbox" id="terms" required> 
                 <label for="terms">Agree to <a href="" class="link" onclick="openPopup()">terms and conditions</a></label>
             </div>
-            <?php if (isset($_GET['error'])): ?>
-    <p style="color:red;"><?php echo htmlspecialchars($_GET['error']); ?></p>
-  <?php endif; ?>
+            
             <input type="submit" class="texts" value = Register><p>
 
         </from>
-                already have an account? <a onclick="window.location.href='loginpage.php'" class="link">login</a>
+                already have an account? <a onclick="window.location.href='login.html'" class="link">login</a>
                </p>
             <p id="error-message"></p>
              

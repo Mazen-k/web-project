@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="css/Style.css">
+    <script defer src="javascript/Script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    
+
+</head>
+<body class="form-body">
+    <nav>
+        <H1>Learn.Py</H1>
+        <ul>
+            <li onclick="window.location.href='index.html'">Home</li>
+            <li onclick="window.location.href='info.html'">Info</li>
+            <li onclick="window.location.href='compiler.html'">Compiler</li>
+            
+        </ul>
+        </nav>
+
+    <div id="big-div">
+        <h2>
+            Login
+        </h2>
+        <form action="php/login.php" method="post" id="loginForm">
+        <input type="hidden" name="redirect" value="index.html">
+        <input type = "text" id = "email" placeholder="Email" name="email" class="texts" required>
+        <input type = "password" id = "password" placeholder="Password" name="password" class="texts" required >
+        
+        
+        <input type="submit" value="Login" class="texts">
+        
+        </form>
+        <script>
+            /* --------------------------------------------------------------------
+               LOGIN – vanilla JS + fetch (expects JSON from php/login.php)
+               -------------------------------------------------------------------- */
+            document.getElementById("loginForm").addEventListener("submit", async function (event) {
+              event.preventDefault();                       // stop normal submit
+          
+              // UI feedback
+              const msgEl        = document.getElementById("login-message") || 
+                                    Object.assign(document.createElement("p"), { id: "login-message", style: "color:red;" });
+              this.appendChild(msgEl);
+              msgEl.textContent  = "Logging in…";
+          
+              const submitBtn    = this.querySelector('input[type="submit"]');
+              const originalText = submitBtn.value;
+              submitBtn.value    = "Processing…";
+              submitBtn.disabled = true;
+          
+              try {
+                const res   = await fetch(this.action, { method: "POST", body: new FormData(this) });
+                const data  = await res.json();             // <-- login.php must send JSON:
+                                                            //     { "status":"success|error", "message":"...", "redirect":"..." }
+          
+                if (data.status === "success") {
+                  window.location.href = data.redirect || "index.html";
+                } else {
+                  msgEl.textContent = data.message || "Login failed";
+                  submitBtn.value   = originalText;
+                  submitBtn.disabled = false;
+                }
+              } catch (err) {
+                console.error(err);
+                msgEl.textContent  = "Network error – try again";
+                submitBtn.value    = originalText;
+                submitBtn.disabled = false;
+              }
+            });
+          </script>
+       <p>
+        
+        Dont have an account? <a onclick="window.location.href='signup.html'" class="link">Sign up</a>
+       </p> 
+        <p id="error-message"></p></form>
+    </div>
+    <footer id="home-foot">
+        <p>&COPY;Learn.py 2025 | All Rights Reserved.</p> 
+    </footer>
+    
+</body>
+</html>

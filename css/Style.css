@@ -140,7 +140,68 @@ nav ul li:hover{
 }
 
 /* styling for home page ends here */
+/* styling for course pages starts here */
 
+#profile {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  #profile h2 {
+    margin-bottom: 20px;
+  }
+  
+  #profile hr {
+    width: 100%;
+    margin: 25px 0;
+    opacity: 0.3;
+  }
+  
+  #profile h3 {
+    margin: 0 0 20px;
+  }
+  
+  #profile table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  
+  #profile th, #big-div td {
+    padding: 12px;
+  }
+  
+  #profile thead {
+    background: #306998;
+    color: white;
+  }
+  
+  #profile tr.alt {
+    background: #f2f2f2;
+  }
+  
+  #logoutBtn {
+    margin-top: 30px;
+    padding: 10px 25px;
+    font-size: 1rem;
+    background: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  #logoutBtn:hover {
+    background: #c9302c;
+  }
+  
 /* styling for course pages starts here */
 
 .body{

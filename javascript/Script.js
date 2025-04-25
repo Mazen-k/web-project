@@ -135,7 +135,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-
+  function loadUserProfile(userId) {
+    $.getJSON(`php/get_profile.php?id=${userId}`, function(data) {
+      console.log('Fetched data:', data);  // <-- Add this line for debugging
+  
+      if (data.error) {
+        alert(data.error);
+        return;
+      }
+      $('#name').text(`${data.firstName} ${data.lastName}`);
+      $('#email').text(data.email);
+      ['q0', 'q1', 'q2'].forEach(k => {
+        $(`#${k}`).text(data[k] ?? '–');
+      });
+    }).fail(function(jqXHR, textStatus, errorThrown) {
+      console.error("AJAX Error:", textStatus, errorThrown);
+    });
+  }
+  
 
 
 

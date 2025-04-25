@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
         if (data.status === 'success') {
           // go wherever PHP told us, or fall back to home
-          window.location.href = data.redirect || '../index.html';
+          window.location.href = data.redirect || '/index.html';
         } else {
           msg.textContent = data.message || 'Registration failed';
         }

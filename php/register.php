@@ -2,8 +2,11 @@
 session_start();
 require 'db.php';
 
+header('Content-Type: application/json; charset=utf-8');   // tell JS what is coming
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
+    echo json_encode(['status' => 'error', 'message' => 'POST required']);
     exit;
 }
 
@@ -39,20 +42,25 @@ if ($stmt->num_rows) {                      // already registered
 $stmt->close();
 
 /* ------------- insert new user ------------- */
-$hash = password_hash($pass, PASSWORD_DEFAULT);
+$hash      = password_hash($pass, PASSWORD_DEFAULT);
+$is_admin  = 0;
 
 $stmt = $conn->prepare(
   'INSERT INTO users (FirstName, LastName, Email, Is_admin, Password)
-   VALUES (?,?,?,?,?)');
+   VALUES (?,?,?,?,?)'
+);
 $is_admin = 0;
-$stmt->bind_param('sssds', $first, $last, $email, $is_admin, $hash);
+$stmt->bind_param('sssis', $first, $last, $email, $is_admin, $hash);
 
 if ($stmt->execute()) {
     $_SESSION['uid']   = $stmt->insert_id;
     $_SESSION['fname'] = $first;
-    header('Location: ../index.html');
+
+    /* send JSON the JS code understands */
+    echo json_encode([
+        'status'   => 'success',
+        'redirect' => 'index.html'
+    ]);
     exit;
-    // AJAX success flag
-} else {
-    http_response_code(500);  echo 'DB error.';
-}
+} http_response_code(500);
+echo json_encode(['status' => 'error', 'message' => 'DB error']);

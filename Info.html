@@ -5,7 +5,7 @@
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <title>Learn.py</title>
         
     </head>
@@ -16,9 +16,23 @@
             <li onclick="window.location.href='index.html'">Home</li>
             <li onclick="window.location.href='Info.html'">Info</li>
             <li onclick="window.location.href='Compiler.html'">Compiler</li>
-            <li><button id="login"><a href="login.html">login</a></button></li>
+            <li><button id="login"><a id="loginlink" href="login.html">login</a></button></li>
         </ul>
         </nav >
+        <script>
+            $(function () {
+              $.getJSON('php/check_session.php', data => {
+                if (data.loggedIn) {
+                  $('#loginlink')
+                    .text('Profile')
+                    .attr('href', 'profile.html')
+                    .parent()          // the button element
+                    .addClass('logged-in');
+                }
+              });
+            });
+            </script>
+            
     <div id = "info-div">
         <h2>About Learn.py</h2><div class = "sub-div" id="intro">
         <p style="font-size: 20px;">Welcome to <b>Learn.py</b> your go-to platform for mastering Python! Whether you're a beginner or looking to refine your skills, we offer a structured, interactive learning experience with hands-on exercises and real-world examples.

@@ -64,6 +64,10 @@
         document.getElementById(k).textContent = data[k] ?? '–');
   })
   .catch(console.error);
+
+  document.getElementById('logoutBtn').onclick =
+  () => location.href = 'php/logout.php';
+
 </script>
 
 

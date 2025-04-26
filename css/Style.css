@@ -781,65 +781,63 @@ input[type="submit"]:active {
   color: #333;
 }
 /* styling for chapter14 ends here */
-.admin-card {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  max-width: 1000px;
-}
+/* ------------------------------------------------------------------
+   Admin – Add-question page
+   ------------------------------------------------------------------*/
 
-#row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-#row textarea {
-  flex: 1 1 600px;
-}
-#row input[type="text"] {
-  flex: 1 1 220px;
-}
-#row input[type="number"] {
-  width: 80px;
-}
-#row select {
-  width: 80px;
-}
-button.save {
-  background: #ffd43b;
-  border: none;
-  padding: 10px 22px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-#quiz {
-  padding: 10px;
-  margin: 10px 0;
-  border-left: 3px solid #ffd43b;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  border-radius: 5px;
-}
-#quizbox {
-  width: 300px;
-  height: 50px;
-  border-top: 3px solid #ffd43b;
-  border-left: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 35px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  flex: 1 1 600px;
-}
-.save {
-  margin-top: 20px;
-}
+   .admin-card{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    max-width:1000px;
+  }
+  
+  /* horizontal strips */
+  .row{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  
+  /* question textarea */
+  .quizbox{
+    flex:1 1 600px;
+    padding:10px;
+    border:1px solid #ccc;
+    border-left:3px solid #FFD43B;
+    border-radius:5px;
+    resize:vertical;
+  }
+  
+  /* all inputs/selects share same decoration */
+  .quiz,
+  .row input[type="number"],
+  .row select{
+    padding:10px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-left:3px solid #FFD43B;
+    border-radius:5px;
+  }
+  
+  /* option text inputs grow */
+  .row input[type="text"]{ flex:1 1 220px; }
+  
+  /* fixed widths */
+  .row input[type="number"],
+  .row select{ width:80px; }
+  
+  /* save button */
+  button.save{
+    background:#FFD43B;
+    border:none;
+    padding:10px 22px;
+    border-radius:6px;
+    cursor:pointer;
+  }
+  button.save:active{ background:#cfae25; }
+  
 
 /* media queries */
 @media (max-width: 770px) {

@@ -33,7 +33,26 @@ Welcome to **Learn.Py**, an interactive and user-friendly website designed to he
 
 This project is licensed under the MIT License.
 
-## Authors
+# Enhanced FrontEnd
+
+- Added 3 quiz pages at end of every chapter (quiz0.html, quiz1.html, and quiz2.html)
+- Added profile page where users can track their quiz grades (profile.html)
+- Added admin page where admins can add questions to any quiz (admin.html)
+
+# JQuery
+
+JQuery was used in client side scripting for the quiz pages (javascript/quiz.js)
+
+# Ajax
+
+# DataBase
+Our database is made up of 4 tables
+- users :Id, FirstName, LastName, Email, Is_admin, Password(hashed),  q0(quiz 0 grade), q1 , and q2
+- q0(quiz 0) : Id, question, op1 (option1) , op2, op3, op4, answer(option 1,2,3,or 4)
+- q1 : Id, question, op1, op2, op3, op4, answer
+- q2 : Id, question, op1, op2, op3, op4, answer
+
+# Authors
 
 - Mazen Kaikaty
 - Jamal El Kassar
@@ -41,7 +60,7 @@ This project is licensed under the MIT License.
 
 ## Resources
 - Bootstrap for homepage Excluding navbar and footer. home icon in sidebar in all course pages.
-- Chatgpt assisted scripting for shrinking nested lists in sidebar for course pages, API skeleton for example code compiler, disapearing terms and conditions div, complext Jquery and php syntax.
+- Chatgpt assisted scripting for shrinking nested lists in sidebar for course pages, API skeleton for example code compiler, disapearing terms and conditions div, and complex Jquery and php syntax.
 - Embed for compiler from tinker.io. API for compiler is emkc.org free API
 - Images are a screen grab from Anaconda's Spyder console.
 - Font is IBM Plex Sans from Google Fonts

@@ -1,94 +1,108 @@
-// elements
-const startBtn  = document.getElementById("start-btn");
-const timerEl   = document.getElementById("timer");
-const timeLeft  = document.getElementById("time-left");
-const form      = document.getElementById("quiz-form");
-const startScr  = document.getElementById("start-screen");
-const resultScr = document.getElementById("result-screen");
-const scoreTxt  = document.getElementById("score-text");
-const gradeMsg  = document.getElementById("grade-msg");
+//get the elements
+const $startBtn = $("#start-btn");
+const $timerEl  = $("#timer");
+const $timeLeft= $("#time-left");
+const $form = $("#quiz-form");
+const $startScr = $("#start-screen");
+const $resultScr= $("#result-screen");
+const $scoreTxt = $("#score-text");
+const $gradeMsg = $("#grade-msg");
 
-let countdown;   // interval reference
-let remaining = 600;   // 10 * 60 sec
+//intielaize timers
+let countdown;           
+let remaining = 600;    
 
-const container = document.getElementById("quiz-container");
-const quizNo    = container.dataset.quiz;
+//get the quiz number
+const quizNb = $("#quiz-container").data("quiz");  
 
-/* ───────────── START QUIZ ───────────── */
-startBtn?.addEventListener("click", async () => {
-  startScr.style.display = "none";
-  timerEl.style.display  = "block";
+//when the user starts the timer is shwown and start screen is hidden
+$startBtn.on("click", () => {
+  $startScr.hide();
+  $timerEl.show();
 
-  // fetch 10 random questions
-  const res  = await fetch(`php/get_quiz.php?quiz=${quizNo}`);
-  const data = await res.json();      // [{id,question,op1..op4}]
-  buildQuiz(data);
-
-  form.style.display = "block";
-  startTimer();
+  //get 10 random questions 
+  $.getJSON("php/get_quiz.php", { quiz: quizNb }, buildQuiz);
 });
 
-/* ───────────── BUILD QUIZ HTML ───────────── */
-function buildQuiz(questions){
+//building the quiz
+function buildQuiz(questions) {
+  //loop over the questions
   questions.forEach((q, idx) => {
-    const qDiv = document.createElement("div");
-    qDiv.className = "question-block";
-    qDiv.innerHTML = `
-      <h3>${idx+1}. ${q.question}</h3>
-      ${[q.op1,q.op2,q.op3,q.op4].map((opt,i)=>`
+    //creaate a div for each question
+    const $qDiv = $("<div>", { class: "question-block" });
+    //display the the questions, options with radiobuttons for each question
+    let html = `<h3>${idx + 1}. ${q.question}</h3>`;
+    html += [q.op1, q.op2, q.op3, q.op4]
+      .map((opt, i) => `
         <label style="display:block;margin:5px 0;">
-          <input type="radio" name="q${idx}" value="${i+1}" required>
+          <input type="radio" name="q${idx}" value="${i + 1}" required>
           ${opt}
         </label>
-      `).join("")}
-      <input type="hidden" name="qid${idx}" value="${q.id}">
-    `;
-    form.appendChild(qDiv);
+      `).join("");
+    html += `<input type="hidden" name="qid${idx}" value="${q.id}">`;
+    //add them to the html opage
+    $qDiv.html(html);
+    $form.append($qDiv);
   });
 
-  // submit btn
-  const submit = document.createElement("button");
-  submit.type  = "submit";
-  submit.textContent = "Submit Quiz";
-  submit.style = "margin-top:15px; background:#FFD43B; padding:10px 15px; border:none; border-radius:5px; cursor:pointer;";
-  form.appendChild(submit);
+  //submit button at the end of the  quiz
+  $("<button>", {
+    type: "submit",
+    text: "Submit Quiz",
+    style: "margin-top:15px;background:#FFD43B;padding:10px 15px;border:none;border-radius:5px;cursor:pointer;"
+  }).appendTo($form);
+
+  $form.show();
+  startTimer();
 }
 
-/* ───────────── TIMER ───────────── */
-function startTimer(){
+
+//timer function
+function startTimer() {
+  //starts at 10:00
   updateTimerDisplay();
-  countdown = setInterval(()=>{
+  countdown = setInterval(() => {
+    //decrement and update
     remaining--;
     updateTimerDisplay();
-    if (remaining <= 0){
+    //if time is over auto submit
+    if (remaining <= 0) {
       clearInterval(countdown);
-      form.requestSubmit();   // auto-submit
+      $form.trigger("submit");   
     }
-  },1000);
+  }, 1000);
 }
-function updateTimerDisplay(){
-  const m = String(Math.floor(remaining/60)).padStart(2,"0");
-  const s = String(remaining%60).padStart(2,"0");
-  timeLeft.textContent = `${m}:${s}`;
+//update the time on the page
+function updateTimerDisplay() {
+  const m = String(Math.floor(remaining / 60)).padStart(2, "0");
+  const s = String(remaining % 60).padStart(2, "0");
+  $timeLeft.text(`${m}:${s}`);
 }
 
-/* ───────────── HANDLE SUBMIT ───────────── */
-form.addEventListener("submit", async (e)=>{
+//handle submission
+$form.on("submit", (e) => {
   e.preventDefault();
+  //stop the timer
   clearInterval(countdown);
 
-  const fd = new FormData(form);
-  // pass the quiz number as query-string too
-  const res = await fetch(`php/grade_quiz.php?quiz=${quizNo}`, {
+  const fd = new FormData(e.target);
+  //send teh form data to the php file to grade it
+  $.ajax({
+    url: `php/grade_quiz.php?quiz=${quizNb}`,
     method: "POST",
-    body: fd,
+    data: fd,
+    processData: false,
+    contentType: false,
+    dataType: "json"
+  })
+  //recieve score and message
+  .done(({ score, message }) => {
+    //hide the form and timer
+    $form.hide();
+    $timerEl.hide();
+    //show the score and msg
+    $scoreTxt.text(score);
+    $gradeMsg.text(message);
+    $resultScr.show();
   });
-  const { score, message } = await res.json();
-
-  // UI
-  form.style.display    = "none";
-  timerEl.style.display = "none";
-  scoreTxt.textContent  = score;
-  gradeMsg.textContent  = message;
-  resultScr.style.display = "block";
 });

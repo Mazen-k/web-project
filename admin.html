@@ -100,7 +100,7 @@
                                { method:'POST', body:new FormData(form) });
       const data = await res.json();
       if (data.ok){
-        msg.style.color='green'; msg.textContent='✔ Saved (id '+data.id+')';
+        msg.style.color='green'; msg.textContent='Saved (id '+data.id+')';
         form.reset();
       } else {
         msg.style.color='red';   msg.textContent=data.error||'Error';

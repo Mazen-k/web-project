@@ -1,25 +1,20 @@
 <?php
-/*  profile_api.php
-    ──────────────────────────────────────────────────────────
-    • NO auth.php include – so nothing gets redirected
-    • Uses the existing session cookie (PHPSESSID) to spot
-      the logged-in user and returns JSON:
-      { firstName, lastName, email, q0, q1, q2 }
-      or 401 / 404 with { error:"…" }
-───────────────────────────────────────────────────────────*/
+//connect to the db and start session to acces user info
 header('Content-Type: application/json');
-session_start();                // only this script cares about the session
-require_once 'db.php';          // $conn  (mysqli)
+session_start();                
+require_once 'db.php';          
 
-// the key your login script sets – change if needed
+//get user id
 $uid = $_SESSION['id'] ?? $_SESSION['user_id'] ?? null;
 
+//if the user is not logged in
 if (!$uid) {
     http_response_code(401);
     echo json_encode(['error' => 'Not logged in']);
     exit;
 }
 
+//get the ramianing user info
 $stmt = $conn->prepare(
     "SELECT firstName, lastName, email, q0, q1, q2
        FROM users
@@ -33,6 +28,7 @@ $stmt->close();
 if ($user) {
     echo json_encode($user);
 } else {
+    //if user not found
     http_response_code(404);
     echo json_encode(['error' => 'User not found']);
 }

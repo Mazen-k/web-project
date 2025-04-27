@@ -1,8 +1,9 @@
 <?php
+// setting up connection to the database
 $host = 'localhost';
 $user = 'root';        
 $pass = '';            
-$db   = 'learnpy';     
+$db='learnpy';     
 
 $conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) {

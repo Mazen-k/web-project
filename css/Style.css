@@ -799,7 +799,10 @@ input[type="submit"]:active {
     gap:12px;
     flex-wrap:wrap;
   }
-  
+  #start-btn{
+    background: #FFD43B;
+    border: none;
+  }
   /* question textarea */
   .quizbox{
     flex:1 1 600px;

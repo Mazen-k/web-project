@@ -15,13 +15,13 @@ Welcome to **Learn.Py**, an interactive and user-friendly website designed to he
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/LearnPy.git
+   git clone https://github.com/Mazen-K/WEB-PROJECT
    ```
 2. Navigate to the project directory:
    ```bash
    cd LearnPy
    ```
-3. Open `index.html` in your preferred browser.
+3. Copy the project into htdocs in your XAMPP directory and run apache and mysql .
 
 ## Usage
 
@@ -44,9 +44,9 @@ This project is licensed under the MIT License.
 JQuery was used in client side scripting for the quiz pages (javascript/quiz.js)
 
 # Ajax
-used to asynchronously notify the user that the email is already in use during login upon exiting the text area.
-also used to asynchronously change the login button to profile if the user is signed in.
-
+-used to asynchronously notify the user that the email is already in use during login upon exiting the text area.
+-used to asynchronously change the login button to profile if the user is signed in.
+-may be used in other areas for simple tasks that do not effect user experience
 # DataBase
 Our database is made up of 4 tables
 - users :Id, FirstName, LastName, Email, Is_admin, Password(hashed),  q0(quiz 0 grade), q1 , and q2
@@ -63,7 +63,8 @@ Our database is made up of 4 tables
 ## Resources
 - Bootstrap for homepage Excluding navbar and footer. home icon in sidebar in all course pages.
 - Chatgpt assisted scripting for shrinking nested lists in sidebar for course pages, API skeleton for example code compiler, disapearing terms and conditions div, and complex Jquery and php syntax.
-- Embed for compiler from tinker.io. API for compiler is emkc.org free API
+- Embed for compiler from tinker.io.
+- API for compiler is emkc.org free API
 - Images are a screen grab from Anaconda's Spyder console.
 - Font is IBM Plex Sans from Google Fonts
 - Course content is derived from a mix of public sources and Lau's CSC243 documents.

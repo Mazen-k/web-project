@@ -35,14 +35,13 @@
         <input type="submit" value="Login" class="texts">
         
         </form>
+        <!--javascript script that handles error fetching upon post. if there is an error it will be fetched from the JSON and appended to the form as a red <p> tag  -->
         <script>
-            /* --------------------------------------------------------------------
-               LOGIN – vanilla JS + fetch (expects JSON from php/login.php)
-               -------------------------------------------------------------------- */
+
             document.getElementById("loginForm").addEventListener("submit", async function (event) {
-              event.preventDefault();                       // stop normal submit
+              event.preventDefault();                       
           
-              // UI feedback
+         
               const msgEl        = document.getElementById("login-message") || 
                                     Object.assign(document.createElement("p"), { id: "login-message", style: "color:red;" });
               this.appendChild(msgEl);
@@ -55,8 +54,7 @@
           
               try {
                 const res   = await fetch(this.action, { method: "POST", body: new FormData(this) });
-                const data  = await res.json();             // <-- login.php must send JSON:
-                                                            //     { "status":"success|error", "message":"...", "redirect":"..." }
+                const data  = await res.json();             
           
                 if (data.status === "success") {
                   window.location.href = data.redirect || "index.html";

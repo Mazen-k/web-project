@@ -26,45 +26,46 @@
         </h2>
         <form id="signupForm" action="php/register.php" method="post">
 
-            
+
             <div id="creds">
-            <input name="first"  id="first" type = "text" 
+            <input name="first"  id="first" type = "text"
             placeholder="First Name" class="names" required>
-            <input name="last"   id="last" type="text" 
+            <input name="last"   id="last" type="text"
             placeholder="Last Name" class="names" required >
             </div>
             <input type="text" name="email" id="emls"
             placeholder="Email" class="texts" required>
-            
+
             <input type="password" name="password" id = "password"
             placeholder="Password" class="texts" required>
             <input type = "password" id = "Verify Password"
             placeholder="Confirm Password" class="texts" required>
             <div id="checkbox-container">
-                <input type="checkbox" id="terms" required> 
+                <input type="checkbox" id="terms" required>
                 <label for="terms">Agree to <a href="" class="link" onclick="openPopup()">terms and conditions</a></label>
             </div>
-            
+
             <input type="submit" class="texts" value = Register><p>
 
         </from>
                 already have an account? <a onclick="window.location.href='login.html'" class="link">login</a>
                </p>
             <p id="error-message"></p>
-             
 
-            
+
+
     </div>
+    <!-- jquery script that uses ajax to check if the email is already in use -->
+     <!-- if the email is already in use, it will disable the submit button and show an error message -->
     <script>
-        let emailInUse = false;  // global flag to track email status
-      
+        let emailInUse = false;
         $(function () {
           $('#emls').on('blur', function () {
             const email = $.trim(this.value);
             const $msg = $('#error-message');
-      
+
             if (email === '') return;
-      
+
             $.ajax({
               url: 'php/check_email.php',
               type: 'POST',
@@ -74,15 +75,14 @@
     if (error) {
         $msg.text(error).css('color', 'red');
         emailInUse = true;
-        $('input[type="submit"]').prop('disabled', true); // 🔒 disable
+        $('input[type="submit"]').prop('disabled', true);
     } else if (in_use) {
         $msg.text('That e-mail address is already registered').css('color', 'red');
         emailInUse = true;
-        $('input[type="submit"]').prop('disabled', true); // 🔒 disable
-    } else {
+        $('input[type="submit"]').prop('disabled', true);
         $msg.text('');
         emailInUse = false;
-        $('input[type="submit"]').prop('disabled', false); // 🔓 enable
+        $('input[type="submit"]').prop('disabled', false);
     }
     },
               error() {
@@ -92,21 +92,21 @@
           });
         });
       </script>
-      
-    
+
+
     <div id ="overlay" onclick="closePopup()"></div>
     <div id="popup">
         <button class="close-btn" onclick="closePopup()">x</button>
         <h2>Terms & Conditions</h2>
-        
+
         <p>By accessing and using <strong>Learn.py</strong>, you agree to comply with the following terms and conditions. If you do not agree with any part of these terms, please discontinue use of the website immediately.</p>
-      
+
         <h3>1. Educational Purpose Only</h3>
         <p><strong>Learn.py</strong> is an educational platform for learning Python programming. The content provided, including tutorials, examples, and exercises, is for informational purposes only and should not be considered professional or official advice.</p>
-      
+
         <h3>2. User Eligibility</h3>
         <p>To use <strong>Learn.py</strong>, you must be at least <strong>13 years old</strong>. If you are under 18, you may only use the platform with parental or guardian permission.</p>
-      
+
         <h3>3. Intellectual Property Rights</h3>
         <ul>
           <li>All text, code snippets, images, and other content on <strong>Learn.py</strong> are protected by copyright and intellectual property laws.</li>
@@ -114,36 +114,36 @@
           <li>You <strong>may not</strong> redistribute, copy, or sell any content without permission.</li>
           <li>Plagiarism or unauthorized sharing of premium content is strictly prohibited.</li>
         </ul>
-      
+
         <h3>4. User Conduct</h3>
         <ul>
           <li><strong>Engage respectfully</strong> with the community and instructors.</li>
           <li><strong>Do not misuse the platform</strong>, including attempting to hack, spam, or distribute malicious code.</li>
           <li><strong>Do not violate any laws</strong> related to software development, including unethical coding practices.</li>
         </ul>
-      
+
         <h3>5. Accuracy & Liability Disclaimer</h3>
         <p>While we strive to provide accurate and up-to-date information, <strong>Learn.py</strong> does not guarantee that all content is error-free.</p>
         <ul>
           <li>We are <strong>not responsible</strong> for coding errors, outdated materials, or misunderstandings.</li>
           <li>You use the information at your own risk.</li>
         </ul>
-      
+
         <h3>6. External Links & Third-Party Resources</h3>
         <p>Some tutorials may include references to external websites or libraries. <strong>Learn.py</strong> is not responsible for third-party content, privacy policies, or security practices.</p>
-      
+
         <h3>7. Updates to Terms</h3>
         <p>We may update these terms at any time without prior notice. Continued use of <strong>Learn.py</strong> signifies your acceptance of any changes.</p>
-      
+
         <h3>8. Privacy Policy</h3>
         <p>By using <strong>Learn.py</strong>, you also agree to our <strong>Privacy Policy</strong>, which explains how we handle your data. We <strong>do not</strong> sell user data but may collect basic analytics for platform improvements.</p>
-        
-        
+
+
       </div>
-      
+
     </div>
     <footer id="home-foot">
-        <p>&COPY;Learn.py 2025 | All Rights Reserved.</p> 
+        <p>&COPY;Learn.py 2025 | All Rights Reserved.</p>
     </footer>
 
 </body>

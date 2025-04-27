@@ -29,9 +29,6 @@ Welcome to **Learn.Py**, an interactive and user-friendly website designed to he
 - Navigate through different topics using the menu.
 - Interact with JavaScript-based features for an engaging experience.
 
-## License
-
-This project is licensed under the MIT License.
 
 # Enhanced FrontEnd
 
@@ -41,12 +38,12 @@ This project is licensed under the MIT License.
 
 # JQuery
 
-JQuery was used in client side scripting for the quiz pages (javascript/quiz.js)
+- JQuery was used in client side scripting for the quiz pages (javascript/quiz.js)
 
 # Ajax
--used to asynchronously notify the user that the email is already in use during login upon exiting the text area.
--used to asynchronously change the login button to profile if the user is signed in.
--may be used in other areas for simple tasks that do not effect user experience
+- used to asynchronously notify the user that the email is already in use during login upon exiting the text area.
+- used to asynchronously change the login button to profile if the user is signed in.
+- may be used in other areas for simple tasks that do not effect user experience
 # DataBase
 Our database is made up of 4 tables
 - users :Id, FirstName, LastName, Email, Is_admin, Password(hashed),  q0(quiz 0 grade), q1 , and q2
@@ -54,6 +51,15 @@ Our database is made up of 4 tables
 - q1 : Id, question, op1, op2, op3, op4, answer
 - q2 : Id, question, op1, op2, op3, op4, answer
 
+
+# Testing
+**IMPORTANT**
+- **IMPORT DATABASE (learnpy (4).sql) FROM PROVIDED DOCUMENTS INTO A MYSQL DATABASE CALLED learnpy to ensure you have an admin account and all features work as intended**
+**IMPORTANT**
+- For testing use the following email and password for the Admin account 
+Email : maher@web.com
+Pw : Maher@123
+- For user accounts, you can create your own using the signup process.
 # Authors
 
 - Mazen Kaikaty

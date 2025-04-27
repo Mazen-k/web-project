@@ -10,7 +10,6 @@
 </head>
 <body class="form-body">
 
-  <!-- ───── NAVBAR ───── -->
   <nav>
     <H1>Learn.Py</H1>
     <ul>
@@ -21,7 +20,6 @@
     </ul>
     </nav >
 
-  <!-- ───── CONTENT ───── -->
   <div id="profile">
     <h2>My Profile</h2>
 
@@ -47,16 +45,17 @@
 
   <footer id="home-foot"><p>&COPY;Learn.py&nbsp;2025&nbsp;| All&nbsp;Rights Reserved.</p></footer>
 
-<!-- ───── JS ───── -->
+
 <script>
     fetch('php/profile.php')
   .then(r => r.json())
   .then(data => {
     if (data.error) {
-      // not logged in or user gone → bounce to login
+      // if the user not logged in take him to the login 
       location.href = 'login.html?redirect=profiler.html';
       return;
     }
+    //display user grades
     document.getElementById('name').textContent =
         `${data.firstName} ${data.lastName}`;
     document.getElementById('email').textContent = data.email;
@@ -64,7 +63,7 @@
         document.getElementById(k).textContent = data[k] ?? '–');
   })
   .catch(console.error);
-
+  //logout
   document.getElementById('logoutBtn').onclick =
   () => location.href = 'php/logout.php';
 

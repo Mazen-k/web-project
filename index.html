@@ -27,13 +27,14 @@
         </ul>
         </nav >
         <script>
+            // if the user is loged in replace the login button with view profile 
             $(function () {
               $.getJSON('php/check_session.php', data => {
                 if (data.loggedIn) {
                   $('#loginlink')
                     .text('Profile')
                     .attr('href', 'profile.html')
-                    .parent()          // the button element
+                    .parent()          
                     .addClass('logged-in');
                 }
               });

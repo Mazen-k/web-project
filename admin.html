@@ -7,12 +7,12 @@
 
   <link rel="stylesheet" href="css/Style.css">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/admin.css"><!-- new rules below -->
+  
 </head>
 
 <body class="form-body">
 
-  <!-- NAV -->
+  
   <nav>
     <h1 onclick="location='index.html'">Learn.Py</h1>
     <ul>
@@ -24,19 +24,17 @@
     </ul>
   </nav>
 
-  <!-- MAIN CARD -->
+  
   <div id="big-div" class="admin-card">
     <h2>Add a new Quiz Question</h2>
 
     <form id="qForm">
 
-      <!-- row: question text -->
       <div class="row"> 
         <textarea name="question" class="quizbox"
                   placeholder="Question text…" required></textarea>
       </div>
 
-      <!-- row: four options -->
       <div class="row">
         <input name="op1" type="text" placeholder="Option 1" class="quiz" required>
         <input name="op2" type="text" placeholder="Option 2" class="quiz" required>
@@ -44,7 +42,6 @@
         <input name="op4" type="text" placeholder="Option 4" class="quiz" required>
       </div>
 
-      <!-- row: quiz # & correct answer -->
       <div class="row">
         <label>Quiz&nbsp;#
           <select name="quiz" class="quiz" required>
@@ -65,7 +62,6 @@
         </label>
       </div>
 
-      <!-- row: action -->
       <div class="row">
         <button type="submit" class="save">Save question</button>
         <span id="msg" style="color:red;"></span>
@@ -77,7 +73,7 @@
   <footer id="home-foot"><p>&COPY;Learn.py&nbsp;2025 | All Rights Reserved.</p></footer>
 
   <script>
-  /* AJAX save */
+  
   const form=document.getElementById('qForm'),
         msg =document.getElementById('msg');
 

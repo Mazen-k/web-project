@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz 0 | Learn.Py</title>
 
-    <!-- *** EXISTING ASSETS *** -->
-    <link rel="stylesheet" href="css/Style.css" />
+    
+    <link rel="stylesheet" href="css/Style.css">
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap"
       rel="stylesheet"
@@ -96,35 +96,30 @@
             
         </ul>
     </aside>
-    <main id="quiz-container" data-quiz = "0">
-        <h1>Quiz 0 — Python Basics</h1>
+    <main id="quiz-container" data-quiz="0">
+      <h1>Quiz 0 — Python Basics</h1>
+    
+      <section id="start-screen">
+        <p>
+          Test your knowledge of Chapter 0. You have
+          <strong>10&nbsp;minutes</strong> to answer 10 questions. Good luck!
+        </p>
+        <button id="start-btn" class="code button">Start Quiz</button>
+      </section>
+    
+      <div id="timer" style = "display:none">
+        ⏳ Time left: <span id="time-left">10:00</span>
+      </div>
+      
+      <form id="quiz-form"></form>
+      <section id="result-screen" style = "display:none">
+        <h2>Your Score: <span id="score-text"></span>/10</h2>
+        <p id="grade-msg"></p>
+        <button id="retry-btn">Try again</button>
+      </section>
+    </main>
   
-        <!-- Start screen -->
-        <section id="start-screen">
-          <p>
-            Test your knowledge of Chapter 0. You have
-            <strong>10&nbsp;minutes</strong> to answer 10 questions. Good luck!
-          </p>
-          <button id="start-btn" class="code button">Start Quiz</button>
-        </section>
-  
-        <!-- Timer -->
-        <div id="timer" style="display:none;font-size:20px;margin-bottom:15px;">
-          ⏳ Time left: <span id="time-left">10:00</span>
-        </div>
-  
-        <!-- Questions will be injected here -->
-        <form id="quiz-form" style="display:none;"></form>
-  
-        <!-- Result -->
-        <section id="result-screen" style="display:none;">
-          <h2>Your Score: <span id="score-text"></span>/10</h2>
-          <p id="grade-msg"></p>
-          <button onclick="window.location.reload()">Try again</button>
-        </section>
-      </main>
-  
-      <!-- FOOTER -->
+      
       <footer id="course-foot">
         <p>&COPY;Learn.py 2025 | All Rights Reserved.</p>
       </footer>

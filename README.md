@@ -44,6 +44,8 @@ This project is licensed under the MIT License.
 JQuery was used in client side scripting for the quiz pages (javascript/quiz.js)
 
 # Ajax
+used to asynchronously notify the user that the email is already in use during login upon exiting the text area.
+also used to asynchronously change the login button to profile if the user is signed in.
 
 # DataBase
 Our database is made up of 4 tables
